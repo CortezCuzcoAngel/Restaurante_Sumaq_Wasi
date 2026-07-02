@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="titulo-pagina">Plato — Sumaq Wasi</title>
+<link rel="stylesheet" href="css/styles.css" />
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+</head>
+<body>
+
+<div class="patron-textil"></div>
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-marca">SW</span>
+      <span>Sumaq Wasi<small>Cocina Cajamarquina</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="menu.html" class="activo">Platos</a></li>
+      <li><a href="index.html#galeria">Galería</a></li>
+      <li><a href="index.html#ubicacion">Ubicación</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+  </nav>
+</header>
+
+<main id="contenido-plato">
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-marca">
+        <a href="index.html" class="logo">
+          <span class="logo-marca">SW</span>
+          <span>Sumaq Wasi</span>
+        </a>
+        <p>Cocina típica cajamarquina, hecha con productos de la tierra y recetas de siempre.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explorar</h5>
+        <ul>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="menu.html">Platos</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#ubicacion">Ubicación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Síguenos</h5>
+        <ul>
+          <li><a href="#" data-whatsapp="Hola Sumaq Wasi 👋">WhatsApp</a></li>
+          <li><a href="https://www.tiktok.com/@sumaqwasi" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sumaq Wasi. Todos los derechos reservados.</span>
+      <span>Cajamarca, Perú</span>
+    </div>
+  </div>
+</footer>
+
+
+
+<div class="redes-flotantes">
+
+    <a href="#"
+       class="red-flotante red-whatsapp"
+       data-whatsapp="Hola Sumaq Wasi 👋"
+       aria-label="WhatsApp">
+       💬
+    </a>
+
+    <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q"
+       class="red-flotante red-tiktok"
+       target="_blank">
+
+        <i class="fa-brands fa-tiktok"></i>
+
+    </a>
+
+</div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+  function marcarFotosSinArchivo() {
+    document.querySelectorAll(".photo-frame img[data-nombre-archivo]").forEach((img) => {
+      img.addEventListener("error", () => {
+        img.classList.add("img-missing");
+        img.closest(".photo-frame").classList.add("sin-foto");
+      }, { once: true });
+    });
+  }
+
+  function renderNoEncontrado() {
+    document.getElementById("contenido-plato").innerHTML = `
+      <section style="padding: 6rem 0; text-align: center;">
+        <div class="container">
+          <p class="eyebrow">Ups</p>
+          <h1>No encontramos ese plato</h1>
+          <p style="margin: 1rem 0 2rem; color:#4a4238;">Puede que el enlace esté incompleto. Vuelve al menú para elegir un plato.</p>
+          <a href="menu.html" class="btn btn-primario">Ir al menú</a>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderPlato(plato) {
+    document.title = plato.nombre + " — Sumaq Wasi";
+
+    const caracteristicasHTML = plato.caracteristicas.map((c) => `
+      <div class="caracteristica-item">
+        <span class="etiqueta">${c.etiqueta}</span>
+        <span>${c.valor}</span>
+      </div>
+    `).join("");
+
+    const ingredientesHTML = plato.ingredientes.map((i) => `<li>${i}</li>`).join("");
+    const preparacionHTML = plato.preparacion.map((p) => `<li><p>${p}</p></li>`).join("");
+
+    const otrosPlatos = PLATOS.filter((p) => p.id !== plato.id && p.categoria === plato.categoria).slice(0, 3);
+    const otrosHTML = otrosPlatos.length ? otrosPlatos.map((p) => `
+      <article class="tarjeta-plato">
+        <div class="photo-frame">
+          <img src="${p.imagen}" alt="${p.nombre}" data-nombre-archivo="${p.imagen}">
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>${p.imagen}</strong></span></div>
+        </div>
+        <div class="tarjeta-plato-cuerpo">
+          <span class="categoria-tag">${p.categoria}</span>
+          <div class="tarjeta-plato-top">
+            <h3>${p.nombre}</h3>
+            <span class="precio">${p.precio}</span>
+          </div>
+          <p>${p.resumen}</p>
+          <a class="btn btn-secundario" href="plato.html?id=${p.id}" target="_blank" rel="noopener">Ver preparación</a>
+        </div>
+      </article>
+    `).join("") : "";
+
+    document.getElementById("contenido-plato").innerHTML = `
+      <section class="detalle-hero">
+        <div class="container">
+          <a href="menu.html" class="volver">← Volver al menú</a>
+          <div class="detalle-grid">
+            <div class="detalle-foto">
+              <div class="photo-frame">
+                <img src="${plato.imagen}" alt="${plato.nombre}" data-nombre-archivo="${plato.imagen}">
+                <div class="photo-placeholder-label"><span class="icono">📷</span><span>Sube la foto de este plato:<br><strong>${plato.imagen}</strong></span></div>
+              </div>
+            </div>
+            <div class="detalle-texto">
+              <span class="categoria-tag">${plato.categoria}</span>
+              <h1>${plato.nombre}</h1>
+              <div class="detalle-precio">${plato.precio}</div>
+              <p>${plato.descripcion}</p>
+              <div class="caracteristicas-lista">
+                ${caracteristicasHTML}
+              </div>
+              <div class="hero-acciones" style="margin-top:1.6rem;">
+                <a href="#" class="btn btn-primario" data-whatsapp="Hola Sumaq Wasi, quisiera reservar y pedir ${plato.nombre} 🍽️">Pedir por WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="detalle-secciones">
+        <div class="container detalle-secciones">
+          <div>
+            <h2>Ingredientes</h2>
+            <ul class="lista-ingredientes">${ingredientesHTML}</ul>
+          </div>
+          <div>
+            <h2>Cómo se prepara</h2>
+            <ol class="lista-preparacion">${preparacionHTML}</ol>
+          </div>
+        </div>
+      </section>
+
+      ${otrosHTML ? `
+      <section class="otros-platos">
+        <div class="container">
+          <div class="section-titulo">
+            <p class="eyebrow">También te puede gustar</p>
+            <h2>Más platos de esta categoría</h2>
+          </div>
+          <div class="destacados-grid">${otrosHTML}</div>
+        </div>
+      </section>` : ""}
+    `;
+
+    marcarFotosSinArchivo();
+
+    // Vuelve a activar los enlaces de WhatsApp generados dinámicamente
+    document.querySelectorAll("[data-whatsapp]").forEach((el) => {
+      if (el.getAttribute("href") === "#" ) {
+        const mensaje = el.getAttribute("data-whatsapp");
+        el.setAttribute("href", enlaceWhatsapp(mensaje));
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener");
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const plato = id ? obtenerPlatoPorId(id) : null;
+
+    if (plato) {
+      renderPlato(plato);
+    } else {
+      renderNoEncontrado();
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sumaq Wasi — Cocina Cajamarquina</title>
+<meta name="description" content="Sumaq Wasi, restaurante de comida típica cajamarquina. Cuy frito, chicharrón, humitas y más, en un ambiente que huele a tierra andina." />
+<link rel="stylesheet" href="css/styles.css" />
+    <link rel = "icon" href="images/logo.gif" type ="image/png">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="patron-textil"></div>
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-marca">SW</span>
+      <span>Sumaq Wasi<small>Cocina Cajamarquina</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#inicio" class="activo">Inicio</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="menu.html">Platos</a></li>
+      <li><a href="index.html#galeria">Galería</a></li>
+      <li><a href="index.html#ubicacion">Ubicación</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+  </nav>
+</header>
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-texto">
+        <p class="eyebrow">Bienvenido a</p>
+        <h1>Sumaq Wasi, la <em>casa hermosa</em> de la cocina cajamarquina</h1>
+        <p>
+          En quechua, "sumaq wasi" significa casa hermosa. Aquí revivimos las
+          recetas de la sierra de Cajamarca: cuy frito, chicharrón, humitas y
+          quesillo, preparados como en la chacra, para compartir en familia.
+        </p>
+        <div class="hero-acciones">
+          <a href="menu.html" class="btn btn-primario">Ver el menú</a>
+          <a href="#" class="btn btn-secundario" data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️">Reservar por WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-foto">
+        <div class="marco-foto photo-frame">
+          <img src="images/hero-principal.jpg" alt="Plato principal del restaurante Sumaq Wasi" data-nombre-archivo="hero-principal.jpg"/>
+          <div class="photo-placeholder-label">
+            <span class="icono">📷</span>
+            <span>Sube aquí tu foto principal:<br /><strong>images/hero-principal.jpg</strong></span>
+          </div>
+        </div>
+        <div class="sello">Sabor<br />Cajamarquino<br />Auténtico</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NOSOTROS ===================== -->
+  <section class="nosotros" id="nosotros">
+    <div class="container nosotros-grid">
+      <div class="nosotros-foto">
+        <div class="marco-foto photo-frame">
+          <img src="images/local-restaurante.jpg" alt="Interior del restaurante Sumaq Wasi" data-nombre-archivo="local-restaurante.jpg" />
+          <div class="photo-placeholder-label">
+            <span class="icono">📷</span>
+            <span>Sube una foto de tu local:<br /><strong>images/local-restaurante.jpg</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="nosotros-texto">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2>Cocina de campo, servida con cariño</h2>
+        <p>
+          Sumaq Wasi nació de la receta de la abuela y del cariño por la
+          tierra cajamarquina. Cada plato que sale de nuestra cocina respeta
+          los tiempos, los ingredientes de la zona y las técnicas que se
+          heredan de generación en generación.
+        </p>
+        <p>
+          Trabajamos con productores locales: el maíz de la chacra, el
+          quesillo de las lecherías cajamarquinas y las hierbas frescas de
+          nuestro propio huerto.
+        </p>
+        <ul class="nosotros-lista">
+          <li><span class="marca">01</span> Ingredientes frescos y de productores locales de Cajamarca</li>
+          <li><span class="marca">02</span> Recetas tradicionales, sin atajos</li>
+          <li><span class="marca">03</span> Ambiente familiar, ideal para compartir</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLATOS DESTACADOS ===================== -->
+  <section id="destacados">
+    <div class="container">
+      <div class="section-titulo">
+        <p class="eyebrow">Lo más pedido</p>
+        <h2>Sabores que representan Cajamarca</h2>
+        <p>Una probadita de nuestra carta. Entra al menú completo para ver todos los platos, su preparación y sus características.</p>
+      </div>
+      <div class="destacados-grid" id="destacados-grid">
+        <!-- Las tarjetas se generan con JavaScript a partir de js/data.js -->
+      </div>
+      <div class="ver-todo-wrap">
+        <a href="menu.html" class="btn btn-primario">Ver el menú completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERÍA ===================== -->
+  <section id="galeria">
+    <div class="container">
+      <div class="section-titulo">
+        <p class="eyebrow">Galería</p>
+        <h2>Un vistazo a Sumaq Wasi</h2>
+        <p>Fotos de nuestro local, nuestros platos y momentos compartidos en familia.</p>
+      </div>
+      <div class="galeria-grid">
+        <div class="photo-frame g1">
+          <img src="images/galeria-1.jpeg" alt="Foto de galería 1" data-nombre-archivo="galeria-1.jpg" />
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>images/galeria-1.jpg</strong></span></div>
+        </div>
+        <div class="photo-frame g2">
+          <img src="images/galeria-2.jpg" alt="Foto de galería 2" data-nombre-archivo="galeria-2.jpg" />
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>images/galeria-2.jpg</strong></span></div>
+        </div>
+        <div class="photo-frame g3">
+          <img src="images/galeria-3.jpg" alt="Foto de galería 3" data-nombre-archivo="galeria-3.jpg" />
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>images/galeria-3.jpg</strong></span></div>
+        </div>
+        <div class="photo-frame g4">
+          <img src="images/galeria-4.jpg" alt="Foto de galería 4" data-nombre-archivo="galeria-4.jpg" />
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>images/galeria-4.jpg</strong></span></div>
+        </div>
+        <div class="photo-frame g5">
+          <img src="images/galeria-5.jpg" alt="Foto de galería 5" data-nombre-archivo="galeria-5.jpg" />
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>images/galeria-5.jpg</strong></span></div>
+        </div>
+        <div class="photo-frame g6">
+          <img src="images/galeria-6.jpg" alt="Foto de galería 6" data-nombre-archivo="galeria-6.jpg" />
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>images/galeria-6.jpg</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== UBICACIÓN / CONTACTO ===================== -->
+
+  <section class="ubicacion" id="ubicacion">
+    <div class="container ubicacion-grid">
+      <div>
+        <p class="eyebrow">Visítanos</p>
+        <h2>Te esperamos en Cajamarca</h2>
+        <div class="info-lista">
+          <div class="info-item">
+            <span class="info-icono">📍</span>
+            <div>
+              <h4>Dirección</h4>
+              <p>Complejo turístico Baños Del Inca<br /><em>(en el segundo piso del museo "Wiñay Wasi")</em></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icono">🕒</span>
+            <div>
+              <h4>Horario</h4>
+              <p>Lunes a domingo, 8:00 a.m. - 5:00 p.m.</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-icono">📞</span>
+            <div>
+              <h4>Reservas</h4>
+              <a href="#" data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️">+51 965 788 902 (WhatsApp)</a>
+            </div>
+          </div>
+
+
+          
+        <div class="info-item">
+            <span class="info-icono">
+                <i class="fa-brands fa-tiktok"></i>
+            </span>
+    <div>
+        <h4>Síguenos</h4>
+        <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q"
+            target="_blank"
+            rel="noopener"
+            class="tiktok-contacto">
+            <span>@angelito_165_</span>
+
+        </a>
+    </div>
+
+
+</div>
+  <p>Unicación en google maps</p>
+      <div class="mapa-frame">
+        <!-- Reemplaza el "src" con el enlace de Google Maps de tu local real -->
+        <iframe
+          src="https://www.google.com/maps?q=Cajamarca,Peru&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          title="Ubicación de Sumaq Wasi en el mapa">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>¿Listo para probar Cajamarca en un plato?</h2>
+      <p>Reserva tu mesa por WhatsApp o síguenos en TikTok para ver cómo preparamos cada receta.</p>
+      <div class="hero-acciones" style="justify-content: center;">
+        <a href="#" class="btn btn-secundario" data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️">Escríbenos al WhatsApp</a>
+        <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q" target="_blank" rel="noopener" class="btn btn-secundario">Síguenos en TikTok</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-marca">
+        <a href="index.html" class="logo">
+          <span class="logo-marca">SW</span>
+          <span>Sumaq Wasi</span>
+        </a>
+        <p>Cocina típica cajamarquina, hecha con productos de la tierra y recetas de siempre.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explorar</h5>
+        <ul>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#ubicacion">Ubicación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Síguenos</h5>
+        <ul>
+          <li><a href="#" data-whatsapp="Hola Sumaq Wasi 👋">WhatsApp</a></li>
+          <li><a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sumaq Wasi. Todos los derechos reservados.</span>
+      <span>Cajamarca, Perú</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Botones flotantes de redes sociales -->
+<div class="redes-flotantes">
+  <a href="#" class="red-flotante red-whatsapp"
+      data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️"
+      aria-label="Escríbenos por WhatsApp"
+      title="WhatsApp">
+      💬
+  </a>
+
+  <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q"
+    target="_blank"
+    rel="noopener"
+    class="red-flotante red-tiktok"
+    aria-label="Síguenos en TikTok"
+    title="TikTok">
+      <i class="fa-brands fa-tiktok"></i>
+</a>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Muestra 3 platos destacados en la página principal
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("destacados-grid");
+    const destacadosIds = ["chicharron-cajamarquino", "cuarto-cuy-frito","cabrito"];
+    destacadosIds.forEach((id) => {
+      const plato = obtenerPlatoPorId(id);
+      if (!plato) return;
+      grid.insertAdjacentHTML("beforeend", `
+        <article class="tarjeta-plato">
+          <div class="photo-frame">
+            <img src="${plato.imagen}" alt="${plato.nombre}" data-nombre-archivo="${plato.imagen}">
+            <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>${plato.imagen}</strong></span></div>
+          </div>
+          <div class="tarjeta-plato-cuerpo">
+            <span class="categoria-tag">${plato.categoria}</span>
+            <div class="tarjeta-plato-top">
+              <h3>${plato.nombre}</h3>
+              <span class="precio">${plato.precio}</span>
+            </div>
+            <p>${plato.resumen}</p>
+            <a class="btn btn-secundario" href="plato.html?id=${plato.id}" target="_blank" rel="noopener">Ver preparación</a>
+          </div>
+        </article>
+      `);
+    });
+
+    // Revisa fotos generadas dinámicamente
+    document.querySelectorAll(".photo-frame img[data-nombre-archivo]").forEach((img) => {
+      img.addEventListener("error", () => {
+        img.classList.add("img-missing");
+        img.closest(".photo-frame").classList.add("sin-foto");
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restaurante — Sumaq Wasi</title>
+<meta name="description" content="Descubre toda la carta de Sumaq Wasi: platos típicos cajamarquinos con foto, descripción, características y preparación." />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel = "icon" href="images/logo.gif" type ="image/png">
+</head>
+<body>
+
+<div class="patron-textil"></div>
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-marca">SW</span>
+      <span>Sumaq Wasi<small>Cocina Cajamarquina</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="menu.html" class="activo">Platos</a></li>
+      <li><a href="index.html#galeria">Galería</a></li>
+      <li><a href="index.html#ubicacion">Ubicación</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="menu-hero">
+    <div class="container">
+      <p class="eyebrow">Nuestra carta</p>
+      <h1>Todo el sabor de Cajamarca, en un solo lugar</h1>
+      <p>Toca "Ver preparación" en cualquier plato para abrir, en una nueva pestaña, su descripción completa, características e ingredientes con el paso a paso de su preparación.</p>
+      <div class="filtros" id="filtros">
+        <button class="filtro-btn activo" data-categoria="Todos">Todos</button>
+        <button class="filtro-btn" data-categoria="Caldos">Caldos</button>
+        <button class="filtro-btn" data-categoria="Jugos">Jugos</button>
+        <button class="filtro-btn" data-categoria="Desayunos">desayunos</button>
+        <button class="filtro-btn" data-categoria="Sanduiches">Sanduiches</button>
+        <button class="filtro-btn" data-categoria="Adicionales">Adicionales</button>
+        <button class="filtro-btn" data-categoria="Entradas">Entradas</button>
+        <button class="filtro-btn" data-categoria="Platos_Tipicos">Platos Típicos</button>
+        <button class="filtro-btn" data-categoria="Platos_a_la_carta">Platos a la carta</button>
+        <button class="filtro-btn" data-categoria="Ceviches">Ceviches</button>
+        <button class="filtro-btn" data-categoria="Bebidas_Calientes">Bebidas calientes</button>
+        <button class="filtro-btn" data-categoria="Tragos">Tragos</button>
+        <button class="filtro-btn" data-categoria="Guardiciones">Guardiciones</button>
+        <button class="filtro-btn" data-categoria="Dietas">Dietas</button>
+        <button class="filtro-btn" data-categoria="Postres">Postres</button>
+        <button class="filtro-btn" data-categoria="Bebidas_frias">Bebidas frias</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="menu-grid" id="menu-grid">
+        <!-- Las tarjetas se generan con JavaScript a partir de js/data.js -->
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <h2>¿Se te antojó algo?</h2>
+      <p>Reserva tu mesa ahora mismo y ven a probar la auténtica cocina cajamarquina.</p>
+      <a href="#" class="btn btn-secundario" data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️">Reservar por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-marca">
+        <a href="index.html" class="logo">
+          <span class="logo-marca">SW</span>
+          <span>Sumaq Wasi</span>
+        </a>
+        <p>Cocina típica cajamarquina, hecha con productos de la tierra y recetas de siempre.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explorar</h5>
+        <ul>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="index.html#galeria">Galería</a></li>
+          <li><a href="index.html#ubicacion">Ubicación</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Síguenos</h5>
+        <ul>
+          <li><a href="#" data-whatsapp="Hola Sumaq Wasi 👋">WhatsApp</a></li>
+          <li><a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sumaq Wasi. Todos los derechos reservados.</span>
+      <span>Cajamarca, Perú</span>
+    </div>
+  </div>
+</footer>
+
+
+
+<div class="redes-flotantes">
+  <a href="#" class="red-flotante red-whatsapp" data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️" aria-label="Escríbenos por WhatsApp" title="WhatsApp">💬</a>
+  <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q" target="_blank" rel="noopener" class="red-flotante red-tiktok" aria-label="Síguenos en TikTok" title="TikTok">🎵</a>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const grid = document.getElementById("menu-grid");
+
+  function marcarFotosSinArchivo() {
+    document.querySelectorAll(".photo-frame img[data-nombre-archivo]").forEach((img) => {
+      img.addEventListener("error", () => {
+        img.classList.add("img-missing");
+        img.closest(".photo-frame").classList.add("sin-foto");
+      }, { once: true });
+    });
+  }
+
+  function pintarPlatos(categoria) {
+    const lista = categoria === "Todos" ? PLATOS : PLATOS.filter((p) => p.categoria === categoria);
+    grid.innerHTML = lista.map((plato) => `
+      <article class="tarjeta-plato">
+        <div class="photo-frame">
+          <img src="${plato.imagen}" alt="${plato.nombre}" data-nombre-archivo="${plato.imagen}">
+          <div class="photo-placeholder-label"><span class="icono">📷</span><span><strong>${plato.imagen}</strong></span></div>
+        </div>
+        <div class="tarjeta-plato-cuerpo">
+          <span class="categoria-tag">${plato.categoria}</span>
+          <div class="tarjeta-plato-top">
+            <h3>${plato.nombre}</h3>
+            <span class="precio">${plato.precio}</span>
+          </div>
+          <p>${plato.resumen}</p>
+          <a class="btn btn-secundario" href="plato.html?id=${plato.id}" target="_blank" rel="noopener">Ver preparación</a>
+        </div>
+      </article>
+    `).join("");
+    marcarFotosSinArchivo();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    pintarPlatos("Todos");
+
+    document.querySelectorAll(".filtro-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filtro-btn").forEach((b) => b.classList.remove("activo"));
+        btn.classList.add("activo");
+        pintarPlatos(btn.dataset.categoria);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
