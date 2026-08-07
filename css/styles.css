@@ -65,8 +65,36 @@ h1, h2, h3, h4 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--terracota);
+
 }
 
+
+
+/* -------- Sub-filtros: Menú del Día -------- */
+.sub-menu-dia .filtro-btn.sub {
+  border-color: var(--verde-valle);
+  color: var(--verde-oscuro);
+}
+
+.sub-menu-dia .filtro-btn.sub.activo,
+.sub-menu-dia .filtro-btn.sub:hover {
+  background: var(--verde-valle);
+  border-color: var(--verde-valle);
+  color: var(--blanco);
+}
+
+/* -------- Sub-filtros: Platos a la Carta -------- */
+.sub-carta .filtro-btn.sub {
+  border-color: var(--vino);
+  color: var(--vino);
+}
+
+.sub-carta .filtro-btn.sub.activo,
+.sub-carta .filtro-btn.sub:hover {
+  background: var(--vino);
+  border-color: var(--vino);
+  color: var(--blanco);
+}
 /* -------------------- Patrón chakana / textil andino -------------------- */
 .patron-textil {
   height: 14px;
@@ -217,6 +245,18 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------- Hero -------------------- */
+.filtros-sub {
+  margin-top: 2rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed #d8cdb5;
+}
+
+.filtros-sub:empty {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .hero {
   position: relative;
   padding: 4.5rem 0 5rem;
@@ -225,7 +265,7 @@ h1, h2, h3, h4 {
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
   align-items: center;
 }
@@ -311,8 +351,6 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-
 
 }
 
@@ -322,9 +360,7 @@ h1, h2, h3, h4 {
   object-fit: cover;
   position: relative;
   z-index: 1;
-  object-position: center 70%;
 }
-
 .photo-frame img.img-missing {
   display: none;
 }
@@ -351,7 +387,7 @@ h1, h2, h3, h4 {
 
 /* -------------------- Secciones generales -------------------- */
 section {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .section-titulo {
@@ -434,10 +470,22 @@ section {
   grid-column: span 2;
   grid-row: span 2;
 }
+
+.galeria-grid .g2 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.galeria-grid .g3 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
 .galeria-grid .g4 {
   grid-column: span 2;
+  grid-row: span 2;
 }
-.galeria-grid .g6 {
+
+.galeria-grid .g6  {
   grid-column: span 2;
   grid-row: span 2;
 }
@@ -531,7 +579,20 @@ section {
 .ubicacion {
   background: var(--piedra-suave);
 }
+.ubicacion-mapa {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
+.ubicacion-mapa .eyebrow {
+  margin-bottom: 0.8rem;
+}
+
+.ubicacion-mapa .mapa-frame {
+  flex: 1;
+  aspect-ratio: 4/3;
+}
 .ubicacion-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -744,6 +805,18 @@ section {
   max-width: 56ch;
   margin: 0 auto;
   color: #4a4238;
+}
+
+#subfiltros.filtros-sub {
+  margin-top: 2rem !important;
+  padding-top: 1.6rem;
+  border-top: 1px dashed #d8cdb5;
+}
+
+#subfiltros.filtros-sub:empty {
+  margin-top: 0 !important;
+  padding-top: 0;
+  border-top: none;
 }
 
 .filtros {
@@ -973,7 +1046,7 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .hero-foto {
+  .nosotros-texto {
     order: -1;
   }
 
