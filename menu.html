@@ -6,7 +6,9 @@
 <title>Restaurante — Sumaq Wasi</title>
 <meta name="description" content="Descubre toda la carta de Sumaq Wasi: platos típicos cajamarquinos con foto, descripción, características y preparación." />
 <link rel="stylesheet" href="css/styles.css" />
-<link rel = "icon" href="images/logo.gif">
+<link rel = "icon" href="images/logo.png" type ="image/png">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -35,24 +37,16 @@
       <p class="eyebrow">Nuestra carta</p>
       <h1>Todo el sabor de Cajamarca, en un solo lugar</h1>
       <p>Toca "Ver preparación" en cualquier plato para abrir, en una nueva pestaña, su descripción completa, características e ingredientes con el paso a paso de su preparación.</p>
+
       <div class="filtros" id="filtros">
-        <button class="filtro-btn activo" data-categoria="Todos">Todos</button>
-        <button class="filtro-btn" data-categoria="Caldos">Caldos</button>
-        <button class="filtro-btn" data-categoria="Jugos">Jugos</button>
-        <button class="filtro-btn" data-categoria="Desayunos">desayunos</button>
-        <button class="filtro-btn" data-categoria="Sanduiches">Sanduiches</button>
-        <button class="filtro-btn" data-categoria="Adicionales">Adicionales</button>
-        <button class="filtro-btn" data-categoria="Entradas">Entradas</button>
-        <button class="filtro-btn" data-categoria="Platos_Tipicos">Platos Típicos</button>
-        <button class="filtro-btn" data-categoria="Platos_a_la_carta">Platos a la carta</button>
-        <button class="filtro-btn" data-categoria="Ceviches">Ceviches</button>
-        <button class="filtro-btn" data-categoria="Bebidas_Calientes">Bebidas calientes</button>
-        <button class="filtro-btn" data-categoria="Tragos">Tragos</button>
-        <button class="filtro-btn" data-categoria="Guardiciones">Guardiciones</button>
-        <button class="filtro-btn" data-categoria="Dietas">Dietas</button>
-        <button class="filtro-btn" data-categoria="Postres">Postres</button>
-        <button class="filtro-btn" data-categoria="Bebidas_frias">Bebidas frias</button>
-      </div>
+  <button class="filtro-btn activo" data-categoria="Todos">Todos</button>
+  <button class="filtro-btn" data-grupo="menu-dia">Ceviches y bar</button>
+  <button class="filtro-btn" data-grupo="carta">El sabor de casa</button>
+</div>
+
+<div class="filtros filtros-sub" id="subfiltros"></div>
+
+</div>
     </div>
   </section>
 
@@ -107,17 +101,71 @@
   </div>
 </footer>
 
-
-
 <div class="redes-flotantes">
-  <a href="#" class="red-flotante red-whatsapp" data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️" aria-label="Escríbenos por WhatsApp" title="WhatsApp">💬</a>
-  <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q" target="_blank" rel="noopener" class="red-flotante red-tiktok" aria-label="Síguenos en TikTok" title="TikTok">🎵</a>
+  <a href="#" class="red-flotante red-whatsapp"
+      data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️"
+      aria-label="Escríbenos por WhatsApp"
+      title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@angelito_165_?_r=1&_t=ZS-96o3Ws2ML6Q"
+    target="_blank"
+    rel="noopener"
+    class="red-flotante red-tiktok"
+    aria-label="Síguenos en TikTok"
+    title="TikTok">
+      <i class="fa-brands fa-tiktok"></i>
+  </a>
 </div>
+
 
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script>
   const grid = document.getElementById("menu-grid");
+  const subfiltros = document.getElementById("subfiltros");
+
+  // Categorías que entran en cada grupo
+  const GRUPOS = {
+    "menu-dia": [
+      "Ceviches", "Chicharron", "Mariscos", "Jalea", "Parihuelas","Bebidas","Energisantes","Piscos", "Cervesas","Vinos","Tragos","Whisky",
+    ],
+    "carta": [
+      "Platos_Tipicos", "Platos_a_la_carta","Guarniciones","Entradas", "Dietas", "Postres","Bebidas_frias","Bebidas_Artesanales","Bebidas_Calientes", "Caldos",
+    ]
+  };
+
+  // Nombres para mostrar en los botones (la clave debe ser igual a la de data.js)
+
+  const ETIQUETAS = {
+    "Caldos": "Caldos",
+    "Jugos": "Jugos",
+    "Desayunos": "Desayunos",
+    "Sanduiches": "Sanduiches",
+    "Adicionales": "Adicionales",
+    "Entradas": "Entradas",
+    "Bebidas_Calientes": "Bebidas calientes",
+    "Guarniciones": "Guarniciones",
+    "Dietas": "Dietas",
+    "Postres": "Postres",
+    "Bebidas_frias": "Bebidas frías",
+    "Chicharron": "Chicharrón",
+    "Platos_Tipicos": "Platos Típicos",
+    "Platos_a_la_carta": "Platos a la carta",
+    "Ceviches": "Ceviches",
+    "Tragos": "Tragos",
+    "Mariscos": "Mariscos",
+    "Jalea": "Jalea",
+    "Parihuelas": "Parihuelas",
+    "Piscos": "Piscos",
+    "Bebidas": "Bebidas",
+    "Energisantes": "Energizantes",
+    "Cervesas": "Cervezas",
+    "Vinos": "Vinos",
+    "Whisky": "Whisky",
+    "Bebidas_Artesanales": "Bebidas Artesanales"
+  };
 
   function marcarFotosSinArchivo() {
     document.querySelectorAll(".photo-frame img[data-nombre-archivo]").forEach((img) => {
@@ -128,8 +176,7 @@
     });
   }
 
-  function pintarPlatos(categoria) {
-    const lista = categoria === "Todos" ? PLATOS : PLATOS.filter((p) => p.categoria === categoria);
+  function pintarLista(lista) {
     grid.innerHTML = lista.map((plato) => `
       <article class="tarjeta-plato">
         <div class="photo-frame">
@@ -150,14 +197,67 @@
     marcarFotosSinArchivo();
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    pintarPlatos("Todos");
+  function pintarPorCategoria(categoria) {
+    const lista = categoria === "Todos" ? PLATOS : PLATOS.filter((p) => p.categoria === categoria);
+    pintarLista(lista);
+  }
 
-    document.querySelectorAll(".filtro-btn").forEach((btn) => {
+  function pintarPorGrupo(grupo) {
+    const categorias = GRUPOS[grupo] || [];
+    const lista = PLATOS.filter((p) => categorias.includes(p.categoria));
+    pintarLista(lista);
+  }
+
+  // Dibuja los sub-botones de un grupo (ej: dentro de "Platos a la Carta")
+  function pintarSubfiltros(grupo) {
+    const categorias = GRUPOS[grupo] || [];
+
+    subfiltros.className = `filtros filtros-sub sub-${grupo}`;
+
+    subfiltros.innerHTML = `
+      <button class="filtro-btn sub activo" data-subtodos="${grupo}">Todos</button>
+      ${categorias.map((cat) => `
+        <button class="filtro-btn sub" data-categoria="${cat}">${ETIQUETAS[cat] || cat}</button>
+      `).join("")}
+    `;
+
+    // Botón "Todos" dentro del sub-bloque -> muestra todo el grupo otra vez
+    subfiltros.querySelector("[data-subtodos]").addEventListener("click", (e) => {
+      subfiltros.querySelectorAll(".filtro-btn").forEach((b) => b.classList.remove("activo"));
+      e.target.classList.add("activo");
+      pintarPorGrupo(grupo);
+    });
+
+    // Botones de cada categoría dentro del sub-bloque
+    subfiltros.querySelectorAll("[data-categoria]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        document.querySelectorAll(".filtro-btn").forEach((b) => b.classList.remove("activo"));
+        subfiltros.querySelectorAll(".filtro-btn").forEach((b) => b.classList.remove("activo"));
         btn.classList.add("activo");
-        pintarPlatos(btn.dataset.categoria);
+        pintarPorCategoria(btn.dataset.categoria);
+      });
+    });
+  }
+
+  function limpiarSubfiltros() {
+  subfiltros.className = "filtros filtros-sub";
+  subfiltros.innerHTML = "";
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    pintarPorCategoria("Todos");
+
+    document.querySelectorAll("#filtros > .filtro-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#filtros > .filtro-btn").forEach((b) => b.classList.remove("activo"));
+        btn.classList.add("activo");
+
+        if (btn.dataset.categoria === "Todos") {
+          limpiarSubfiltros();
+          pintarPorCategoria("Todos");
+        } else if (btn.dataset.grupo) {
+          pintarSubfiltros(btn.dataset.grupo);
+          pintarPorGrupo(btn.dataset.grupo);
+        }
       });
     });
   });
