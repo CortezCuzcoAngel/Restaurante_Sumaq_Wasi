@@ -1,11 +1,3 @@
-// ============================================================
-// SUMAQ WASI — Datos de los platos
-// Para agregar o editar un plato, solo modifica este arreglo.
-// La foto de cada plato se busca en: images/[imagen]
-// Si el archivo no existe, se muestra un marco decorativo
-// (ver GUIA-DE-IMAGENES.txt para saber cómo reemplazarlas).
-// ============================================================
-
 const PLATOS = [
   // =====================
   // DESAYUNOS
@@ -49,7 +41,7 @@ const PLATOS = [
     categoria: "Desayunos",
     nombre: "Trucha Frita con Yuca + Café",
     precio: "S/ 18",
-    imagen: "images/trucha-yuca-cafe.jpg",
+    imagen: "images/trucha-frita-yuca-cafe.jpg",
     resumen:
       "Trucha frita acompañada de yuca sancochada y una taza de café cajamarquino.",
     descripcion:
@@ -1572,7 +1564,7 @@ const PLATOS = [
     id: "ceviche-tollo",
     categoria: "Ceviches",
     nombre: "Ceviche de Tollo",
-    precio: "S/ 27",
+    precio: "S/ 28",
     imagen: "images/ceviche-tollo.jpg",
     resumen:
       "Tradicional ceviche preparado con tollo fresco, marinado en limón y acompañado de camote, choclo y cancha.",
@@ -1674,41 +1666,636 @@ const PLATOS = [
       "Servir frío con choclo y cancha.",
     ],
   },
+  {
+    id: "leche-pantera",
+    categoria: "Ceviches",
+    nombre: "Leche de Pantera",
+    precio: "S/ 20",
+    imagen: "images/leche-pantera.jpg",
+    resumen:
+      "Refrescante preparación marina a base de leche de tigre y mariscos.",
+    descripcion:
+      "Potente y refrescante preparación marina elaborada con leche de tigre, pescado fresco, limón, cebolla y ají. Una opción intensa y llena de sabor.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 copa" },
+      { etiqueta: "Tiempo de preparación", valor: "15 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Nivel picante", valor: "Medio" },
+      { etiqueta: "Temperatura", valor: "Fría" },
+    ],
+    ingredientes: [
+      "Pescado fresco",
+      "Leche de tigre",
+      "Limón",
+      "Cebolla roja",
+      "Ají limo",
+      "Culantro",
+      "Sal",
+    ],
+    preparacion: [
+      "Cortar el pescado en trozos pequeños.",
+      "Preparar la leche de tigre con limón y ají.",
+      "Mezclar el pescado con la preparación.",
+      "Agregar cebolla y culantro.",
+      "Servir bien frío.",
+    ],
+  },
 
   {
-    id: "frito-con-ceviche",
+    id: "frito-ceviche-tollo-chicharron",
     categoria: "Ceviches",
-    nombre: "Frito con Ceviche",
+    nombre: "Frito con Ceviche de Tollo + Chicharrón de Chancho",
     precio: "S/ 28",
-    imagen: "images/frito-con-ceviche.jpg",
-    resumen: "Combinación de pescado frito con una porción de ceviche fresco.",
+    imagen: "images/frito-ceviche-tollo-chicharron.jpg",
+    resumen:
+      "Fritura de pescado acompañada de ceviche de tollo y chicharrón de chancho.",
     descripcion:
-      "Una de las combinaciones favoritas de la gastronomía peruana. Incluye un filete de pescado frito, acompañado de una porción de ceviche fresco, camote, choclo y cancha serrana.",
+      "Combinación especial que reúne el sabor del pescado frito con un fresco ceviche de tollo y crocantes trozos de chicharrón de chancho. Una propuesta abundante y llena de sabor.",
     caracteristicas: [
       { etiqueta: "Porción", valor: "1 plato" },
       { etiqueta: "Tiempo de preparación", valor: "30 minutos" },
-      { etiqueta: "Nivel picante", valor: "Moderado" },
       { etiqueta: "Origen", valor: "Perú" },
-      { etiqueta: "Acompañado de", valor: "Camote, choclo y cancha" },
+      { etiqueta: "Nivel picante", valor: "Medio" },
+      { etiqueta: "Especialidad", valor: "Combinación marina y criolla" },
     ],
     ingredientes: [
-      "Filete de pescado",
-      "Pescado para ceviche",
+      "Pescado",
+      "Tollo",
+      "Carne de chancho",
       "Limón",
-      "Cebolla",
+      "Cebolla roja",
       "Ají limo",
+      "Culantro",
       "Harina",
       "Aceite",
-      "Camote",
-      "Choclo",
-      "Cancha",
+      "Sal",
     ],
     preparacion: [
-      "Preparar el ceviche con pescado fresco.",
-      "Empanizar ligeramente el filete.",
-      "Freír hasta dorar.",
-      "Servir el pescado junto al ceviche.",
-      "Acompañar con camote, choclo y cancha.",
+      "Sazonar y freír el pescado.",
+      "Preparar el ceviche de tollo con limón, cebolla y ají.",
+      "Preparar el chicharrón de chancho hasta obtener una textura crocante.",
+      "Servir las tres preparaciones juntas.",
+    ],
+  },
+
+  {
+    id: "ceviche-mixto",
+    categoria: "Ceviches",
+    nombre: "Ceviche Mixto",
+    precio: "S/ 35",
+    imagen: "images/ceviche-mixto.jpg",
+    resumen:
+      "Ceviche de pescado acompañado de una selección de mariscos frescos.",
+    descripcion:
+      "Clásico ceviche mixto preparado con pescado fresco y mariscos, mezclados con limón, cebolla roja, ají y culantro. Una combinación fresca y llena de sabor marino.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "20 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Nivel picante", valor: "Medio" },
+      { etiqueta: "Tipo", valor: "Ceviche mixto" },
+    ],
+    ingredientes: [
+      "Pescado fresco",
+      "Calamar",
+      "Pulpo",
+      "Langostino",
+      "Limón",
+      "Cebolla roja",
+      "Ají limo",
+      "Culantro",
+      "Sal",
+    ],
+    preparacion: [
+      "Cortar el pescado y los mariscos.",
+      "Cocinar previamente los mariscos que lo requieran.",
+      "Mezclar con limón, ají y sal.",
+      "Agregar cebolla y culantro.",
+      "Servir inmediatamente.",
+    ],
+  },
+
+  {
+    id: "ceviche-conchas-negras",
+    categoria: "Cecivhes",
+    nombre: "Ceviche de Conchas Negras",
+    precio: "S/ 35",
+    imagen: "images/ceviche-conchas-negras.jpg",
+    resumen: "Ceviche de conchas negras con limón, cebolla y ají.",
+    descripcion:
+      "Tradicional ceviche preparado con conchas negras frescas, limón, cebolla roja, ají limo y culantro. Su sabor intenso y característico lo convierte en una especialidad para los amantes de los productos marinos.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "15 minutos" },
+      { etiqueta: "Origen", valor: "Costa del Perú" },
+      { etiqueta: "Nivel picante", valor: "Medio" },
+      { etiqueta: "Sabor", valor: "Intenso y marino" },
+    ],
+    ingredientes: [
+      "Conchas negras",
+      "Limón",
+      "Cebolla roja",
+      "Ají limo",
+      "Culantro",
+      "Sal",
+      "Pimienta",
+    ],
+    preparacion: [
+      "Limpiar cuidadosamente las conchas negras.",
+      "Mezclarlas con limón y ají.",
+      "Agregar cebolla y culantro.",
+      "Sazonar al gusto.",
+      "Servir inmediatamente.",
+    ],
+  },
+
+  {
+    id: "ceviche-carretillero",
+    categoria: "Ceviches",
+    nombre: "Ceviche Carretillero",
+    precio: "S/ 30",
+    imagen: "images/ceviche-carretillero.jpg",
+    resumen:
+      "Ceviche de tollo acompañado de chicharrón de pota y crema especial.",
+    descripcion:
+      "Abundante ceviche carretillero preparado con ceviche de tollo, acompañado de crocante chicharrón de pota y una cremosa salsa especial. Una combinación contundente de sabores y texturas.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Nivel picante", valor: "Medio" },
+      { etiqueta: "Especialidad", valor: "Ceviche + chicharrón de pota" },
+    ],
+    ingredientes: [
+      "Tollo",
+      "Pota",
+      "Limón",
+      "Cebolla roja",
+      "Ají limo",
+      "Culantro",
+      "Crema especial",
+      "Harina",
+      "Aceite",
+      "Sal",
+    ],
+    preparacion: [
+      "Preparar el ceviche de tollo con limón, cebolla y ají.",
+      "Cortar la pota y sazonarla.",
+      "Pasar la pota por harina y freír hasta que quede crocante.",
+      "Preparar la crema especial.",
+      "Servir el ceviche acompañado del chicharrón de pota y la crema.",
+    ],
+  },
+
+  // =====================
+  // Chicharrones
+  // =====================
+  {
+    id: "chicharron-pota",
+    categoria: "Chicharron",
+    nombre: "Chicharrón de Pota",
+    precio: "S/ 30",
+    imagen: "images/chicharron-pota.jpg",
+    resumen:
+      "Crocantes trozos de pota acompañados de guarnición y salsa criolla.",
+    descripcion:
+      "Delicioso chicharrón preparado con trozos de pota sazonados y fritos hasta conseguir una textura crocante por fuera y suave por dentro.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Textura", valor: "Crocante" },
+      { etiqueta: "Acompañado de", valor: "Salsa criolla y guarnición" },
+    ],
+    ingredientes: [
+      "Pota",
+      "Harina",
+      "Limón",
+      "Ajo",
+      "Pimienta",
+      "Sal",
+      "Aceite",
+    ],
+    preparacion: [
+      "Limpiar y cortar la pota.",
+      "Sazonar con ajo, pimienta y sal.",
+      "Pasar los trozos por harina.",
+      "Freír hasta que estén dorados y crocantes.",
+      "Servir con salsa criolla y guarnición.",
+    ],
+  },
+
+  {
+    id: "chicharron-trucha",
+    categoria: "Chicharron",
+    nombre: "Chicharrón de Trucha",
+    precio: "S/ 32",
+    imagen: "images/chicharron-trucha.jpg",
+    resumen:
+      "Crocantes trozos de trucha acompañados de salsa criolla y guarnición.",
+    descripcion:
+      "Trucha fresca cortada en trozos, sazonada y frita hasta obtener una textura dorada y crocante, conservando el sabor característico de este pescado.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Cajamarca" },
+      { etiqueta: "Textura", valor: "Crocante" },
+      { etiqueta: "Acompañado de", valor: "Salsa criolla y guarnición" },
+    ],
+    ingredientes: [
+      "Trucha",
+      "Harina",
+      "Limón",
+      "Ajo",
+      "Pimienta",
+      "Sal",
+      "Aceite",
+    ],
+    preparacion: [
+      "Limpiar y cortar la trucha.",
+      "Sazonar los trozos.",
+      "Pasarlos por harina.",
+      "Freír hasta que estén dorados.",
+      "Servir con salsa criolla y guarnición.",
+    ],
+  },
+
+  {
+    id: "chicharron-langostinos",
+    categoria: "Chicharron",
+    nombre: "Chicharrón de Langostinos",
+    precio: "S/ 35",
+    imagen: "images/chicharron-langostinos.jpg",
+    resumen: "Langostinos crocantes acompañados de salsa criolla y guarnición.",
+    descripcion:
+      "Langostinos frescos sazonados y fritos hasta lograr una cobertura dorada y crocante, acompañados de salsa criolla y guarnición.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "20 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Textura", valor: "Crocante" },
+      { etiqueta: "Acompañado de", valor: "Salsa criolla y guarnición" },
+    ],
+    ingredientes: [
+      "Langostinos",
+      "Harina",
+      "Huevo",
+      "Limón",
+      "Ajo",
+      "Pimienta",
+      "Sal",
+      "Aceite",
+    ],
+    preparacion: [
+      "Limpiar los langostinos.",
+      "Sazonarlos con ajo, pimienta y sal.",
+      "Pasarlos por huevo y harina.",
+      "Freír hasta obtener un color dorado.",
+      "Servir con salsa criolla y guarnición.",
+    ],
+  },
+
+  {
+    id: "chicharron-tollo",
+    categoria: "Chicharron",
+    nombre: "Chicharrón de Tollo",
+    precio: "S/ 35",
+    imagen: "images/chicharron-tollo.jpg",
+    resumen:
+      "Crocantes trozos de tollo acompañados de salsa criolla y guarnición.",
+    descripcion:
+      "Exquisito chicharrón preparado con tollo fresco, cortado en trozos, sazonado y frito hasta obtener una textura dorada y crocante.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Textura", valor: "Crocante" },
+      { etiqueta: "Acompañado de", valor: "Salsa criolla y guarnición" },
+    ],
+    ingredientes: [
+      "Tollo",
+      "Harina",
+      "Limón",
+      "Ajo",
+      "Pimienta",
+      "Sal",
+      "Aceite",
+    ],
+    preparacion: [
+      "Limpiar y cortar el tollo.",
+      "Sazonar los trozos.",
+      "Pasarlos por harina.",
+      "Freír hasta que estén dorados y crocantes.",
+      "Servir con salsa criolla y guarnición.",
+    ],
+  },
+
+  // =====================
+  // Mariscos
+  // =====================
+
+  {
+    id: "arroz-mariscos",
+    categoria: "Mariscos",
+    nombre: "Arroz con Mariscos",
+    precio: "S/ 35",
+    imagen: "images/arroz-mariscos.jpg",
+    resumen:
+      "Arroz sazonado preparado con una deliciosa combinación de mariscos.",
+    descripcion:
+      "Arroz preparado con una selección de mariscos frescos, acompañado de un aderezo especial que le brinda un sabor intenso y característico de la cocina marina peruana.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Tipo", valor: "Plato marino" },
+      { etiqueta: "Nivel picante", valor: "Suave" },
+    ],
+    ingredientes: [
+      "Arroz",
+      "Calamar",
+      "Pulpo",
+      "Langostinos",
+      "Almejas",
+      "Cebolla",
+      "Tomate",
+      "Ají amarillo",
+      "Ajo",
+      "Culantro",
+      "Aceite",
+      "Sal",
+    ],
+    preparacion: [
+      "Preparar el aderezo con cebolla, ajo, tomate y ají.",
+      "Agregar los mariscos y saltear brevemente.",
+      "Incorporar el arroz cocido.",
+      "Mezclar cuidadosamente todos los ingredientes.",
+      "Servir caliente.",
+    ],
+  },
+
+  {
+    id: "chaufa-mariscos",
+    categoria: "Mariscos",
+    nombre: "Chaufa con Mariscos",
+    precio: "S/ 35",
+    imagen: "images/chaufa-mariscos.jpg",
+    resumen: "Arroz chaufa salteado al wok con una variedad de mariscos.",
+    descripcion:
+      "Delicioso arroz chaufa preparado al wok con mariscos frescos, huevo, cebolla china y sillao, combinando la cocina marina con el tradicional estilo chifa peruano.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Preparación", valor: "Salteado al wok" },
+      { etiqueta: "Nivel picante", valor: "Suave" },
+    ],
+    ingredientes: [
+      "Arroz",
+      "Calamar",
+      "Pulpo",
+      "Langostinos",
+      "Huevo",
+      "Cebolla china",
+      "Sillao",
+      "Ajo",
+      "Aceite",
+      "Sal",
+    ],
+    preparacion: [
+      "Saltear los mariscos.",
+      "Agregar el huevo y cocinarlo.",
+      "Incorporar el arroz.",
+      "Añadir sillao y cebolla china.",
+      "Saltear todo al wok y servir caliente.",
+    ],
+  },
+
+  // =====================
+  // Jalea
+  // =====================
+
+  {
+    id: "jalea-simple",
+    categoria: "Jalea",
+    nombre: "Jalea Simple",
+    precio: "S/ 30",
+    imagen: "images/jalea-simple.jpg",
+    resumen: "Crocante pescado frito acompañado de salsa criolla y guarnición.",
+    descripcion:
+      "Tradicional jalea peruana preparada con pescado fresco sazonado, empanizado y frito hasta quedar crocante. Se acompaña con salsa criolla y guarnición.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "25 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Textura", valor: "Crocante" },
+      { etiqueta: "Acompañado de", valor: "Salsa criolla y guarnición" },
+    ],
+    ingredientes: [
+      "Pescado fresco",
+      "Harina",
+      "Limón",
+      "Cebolla roja",
+      "Ají",
+      "Culantro",
+      "Aceite",
+      "Sal",
+    ],
+    preparacion: [
+      "Cortar el pescado en trozos.",
+      "Sazonar y pasar por harina.",
+      "Freír hasta obtener un color dorado y crocante.",
+      "Preparar la salsa criolla.",
+      "Servir acompañado de la guarnición.",
+    ],
+  },
+
+  {
+    id: "jalea-mixta",
+    categoria: "Jalea",
+    nombre: "Jalea Mixta",
+    precio: "S/ 35",
+    imagen: "images/jalea-mixta.jpg",
+    resumen: "Crocante combinación de pescado y mariscos fritos.",
+    descripcion:
+      "Abundante jalea preparada con pescado fresco y una selección de mariscos, fritos hasta obtener una textura crocante y acompañados de salsa criolla y guarnición.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "30 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Textura", valor: "Crocante" },
+      { etiqueta: "Acompañado de", valor: "Salsa criolla y guarnición" },
+    ],
+    ingredientes: [
+      "Pescado",
+      "Calamar",
+      "Pulpo",
+      "Langostinos",
+      "Harina",
+      "Limón",
+      "Cebolla roja",
+      "Ají",
+      "Culantro",
+      "Aceite",
+      "Sal",
+    ],
+    preparacion: [
+      "Limpiar y cortar el pescado y los mariscos.",
+      "Sazonar y pasar por harina.",
+      "Freír hasta que estén dorados y crocantes.",
+      "Preparar la salsa criolla.",
+      "Servir todo junto con la guarnición.",
+    ],
+  },
+
+  // =====================
+  // Parihuela
+  // =====================
+
+  {
+    id: "parihuela-tramboyo",
+    categoria: "Parihuelas",
+    nombre: "Parihuela de Tramboyo",
+    precio: "S/ 32",
+    imagen: "images/parihuela-tramboyo.jpg",
+    resumen:
+      "Tradicional sopa marina preparada con tramboyo y un concentrado de pescado.",
+    descripcion:
+      "Caldo marino caliente y sabroso preparado con tramboyo, pescado y un aderezo especial que concentra todo el sabor de los productos del mar.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "35 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Temperatura", valor: "Caliente" },
+      { etiqueta: "Especialidad", valor: "Sopa marina" },
+    ],
+    ingredientes: [
+      "Tramboyo",
+      "Caldo de pescado",
+      "Tomate",
+      "Cebolla",
+      "Ají panca",
+      "Ají amarillo",
+      "Ajo",
+      "Culantro",
+      "Limón",
+      "Sal",
+    ],
+    preparacion: [
+      "Preparar el caldo de pescado.",
+      "Elaborar el aderezo con cebolla, ajo, tomate y ají.",
+      "Agregar el caldo y el tramboyo.",
+      "Cocinar hasta que el pescado esté listo.",
+      "Servir caliente con culantro y limón.",
+    ],
+  },
+
+  {
+    id: "parihuela-cabrilla",
+    categoria: "Parihuelas",
+    nombre: "Parihuela de Cabrilla",
+    precio: "S/ 32",
+    imagen: "images/parihuela-cabrilla.jpg",
+    resumen: "Caldo marino preparado con cabrilla y un concentrado de pescado.",
+    descripcion:
+      "Sabrosa parihuela elaborada con cabrilla fresca y un caldo concentrado de pescado, acompañado de un aderezo tradicional y hierbas aromáticas.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "35 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Temperatura", valor: "Caliente" },
+      { etiqueta: "Especialidad", valor: "Sopa marina" },
+    ],
+    ingredientes: [
+      "Cabrilla",
+      "Caldo de pescado",
+      "Cebolla",
+      "Tomate",
+      "Ají panca",
+      "Ajo",
+      "Culantro",
+      "Limón",
+      "Sal",
+    ],
+    preparacion: [
+      "Preparar el caldo de pescado.",
+      "Realizar el aderezo.",
+      "Agregar el caldo y la cabrilla.",
+      "Cocinar hasta que el pescado esté completamente listo.",
+      "Servir caliente.",
+    ],
+  },
+
+  {
+    id: "parihuela-trucha",
+    categoria: "Parihuelas",
+    nombre: "Parihuela de Trucha",
+    precio: "S/ 28",
+    imagen: "images/parihuela-trucha.jpg",
+    resumen:
+      "Caldo caliente preparado con trucha fresca y un aderezo especial.",
+    descripcion:
+      "Parihuela elaborada con trucha fresca, caldo concentrado y un aderezo tradicional que realza el sabor del pescado.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "30 minutos" },
+      { etiqueta: "Origen", valor: "Cajamarca" },
+      { etiqueta: "Temperatura", valor: "Caliente" },
+      { etiqueta: "Especialidad", valor: "Trucha" },
+    ],
+    ingredientes: [
+      "Trucha",
+      "Caldo de pescado",
+      "Cebolla",
+      "Tomate",
+      "Ají amarillo",
+      "Ajo",
+      "Culantro",
+      "Limón",
+      "Sal",
+    ],
+    preparacion: [
+      "Preparar el caldo.",
+      "Realizar el aderezo.",
+      "Agregar la trucha y el caldo.",
+      "Cocinar hasta que la trucha esté lista.",
+      "Servir caliente.",
+    ],
+  },
+
+  {
+    id: "parihuela-tollo",
+    categoria: "Parihuelas",
+    nombre: "Parihuela de Tollo",
+    precio: "S/ 30",
+    imagen: "images/parihuela-tollo.jpg",
+    resumen: "Tradicional caldo marino preparado con tollo y aderezo especial.",
+    descripcion:
+      "Caliente y sabrosa parihuela preparada con tollo fresco, caldo de pescado y un aderezo tradicional de la cocina marina peruana.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 plato" },
+      { etiqueta: "Tiempo de preparación", valor: "35 minutos" },
+      { etiqueta: "Origen", valor: "Perú" },
+      { etiqueta: "Temperatura", valor: "Caliente" },
+      { etiqueta: "Especialidad", valor: "Sopa marina" },
+    ],
+    ingredientes: [
+      "Tollo",
+      "Caldo de pescado",
+      "Cebolla",
+      "Tomate",
+      "Ají panca",
+      "Ajo",
+      "Culantro",
+      "Limón",
+      "Sal",
+    ],
+    preparacion: [
+      "Preparar el caldo de pescado.",
+      "Preparar el aderezo con cebolla, ajo, tomate y ají.",
+      "Agregar el caldo y el tollo.",
+      "Cocinar hasta que el pescado esté listo.",
+      "Servir caliente con culantro y limón.",
     ],
   },
 
@@ -2099,7 +2686,7 @@ const PLATOS = [
 
   {
     id: "arroz-blanco",
-    categoria: "Guardiciones",
+    categoria: "Guarniciones",
     nombre: "Arroz Blanco",
     precio: "S/ 5",
     imagen: "images/arroz-blanco.jpg",
@@ -2123,7 +2710,7 @@ const PLATOS = [
 
   {
     id: "papas-fritas",
-    categoria: "Guardiciones",
+    categoria: "Guarniciones",
     nombre: "Papas Fritas",
     precio: "S/ 10",
     imagen: "images/papas-fritas.jpg",
