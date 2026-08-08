@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Revisa todas las fotos: si el archivo no existe todavía
-  // (porque el dueño del restaurante aún no lo ha subido),
-  // muestra un marco decorativo con instrucciones en su lugar.
   document
     .querySelectorAll(".photo-frame img[data-nombre-archivo]")
     .forEach((img) => {
@@ -20,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Número de WhatsApp del restaurante (formato internacional, sin + ni espacios)
-// EDITA esta línea con tu número real:
-const WHATSAPP_NUMERO = "51965788902"; // Reemplaza con tu número de WhatsApp
+const WHATSAPP_NUMERO = "51965788902"; 
 
 function enlaceWhatsapp(mensaje) {
   const texto = encodeURIComponent(
