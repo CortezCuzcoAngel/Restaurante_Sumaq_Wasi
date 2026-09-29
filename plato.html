@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title id="titulo-pagina">Plato — Sumaq Wasi</title>
 <link rel="stylesheet" href="css/styles.css" />
-
+<link rel = "icon" href="images/logo.png" type ="image/png">
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -126,8 +126,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       </div>
     `).join("");
 
-    const ingredientesHTML = plato.ingredientes.map((i) => `<li>${i}</li>`).join("");
-    const preparacionHTML = plato.preparacion.map((p) => `<li><p>${p}</p></li>`).join("");
+    const ingredientesHTML = (plato.ingredientes || []).map((i) => `<li>${i}</li>`).join("");
+    const preparacionHTML = (plato.preparacion || []).map((p) => `<li><p>${p}</p></li>`).join("");
 
     const otrosPlatos = PLATOS.filter((p) => p.id !== plato.id && p.categoria === plato.categoria).slice(0, 3);
     const otrosHTML = otrosPlatos.length ? otrosPlatos.map((p) => `
@@ -175,18 +175,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         </div>
       </section>
 
-      <section class="detalle-secciones">
-        <div class="container detalle-secciones">
-          <div>
-            <h2>Ingredientes</h2>
-            <ul class="lista-ingredientes">${ingredientesHTML}</ul>
-          </div>
-          <div>
-            <h2>Cómo se prepara</h2>
-            <ol class="lista-preparacion">${preparacionHTML}</ol>
-          </div>
+          ${plato.preparado === false ? "" : `
+    <section class="detalle-secciones">
+      <div class="container detalle-secciones">
+        <div>
+          <h2>Ingredientes</h2>
+          <ul class="lista-ingredientes">${ingredientesHTML}</ul>
         </div>
-      </section>
+        <div>
+          <h2>Cómo se prepara</h2>
+          <ol class="lista-preparacion">${preparacionHTML}</ol>
+        </div>
+      </div>
+    </section>`}
 
       ${otrosHTML ? `
       <section class="otros-platos">
