@@ -132,7 +132,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       "Ceviches", "Chicharron", "Mariscos", "Jalea", "Parihuelas","Bebidas","Energisantes","Piscos", "Cervesas","Vinos","Tragos","Whisky",
     ],
     "carta": [
-      "Platos_Tipicos", "Platos_a_la_carta","Guarniciones","Entradas", "Dietas", "Postres","Bebidas_frias","Bebidas_Artesanales","Bebidas_Calientes", "Caldos",
+      "Desayunos", "Platos_Tipicos", "Platos_a_la_carta","Guarniciones","Entradas", "Dietas", "Postres","Bebidas_frias", "Bebidas_Calientes", "Caldos",
     ]
   };
 
@@ -164,7 +164,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     "Cervesas": "Cervezas",
     "Vinos": "Vinos",
     "Whisky": "Whisky",
-    "Bebidas_Artesanales": "Bebidas Artesanales"
   };
 
   function marcarFotosSinArchivo() {
@@ -190,7 +189,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             <span class="precio">${plato.precio}</span>
           </div>
           <p>${plato.resumen}</p>
-          <a class="btn btn-secundario" href="plato.html?id=${plato.id}" target="_blank" rel="noopener">Ver preparación</a>
+          <a class="btn btn-secundario" href="plato.html?id=${plato.id}" target="_blank" rel="noopener">${plato.preparado === false ? "Ver detalle" : "Ver preparación"}</a>
         </div>
       </article>
     `).join("");
