@@ -1,3 +1,4 @@
+
 const PLATOS = [
   // =====================
   // DESAYUNOS
@@ -958,7 +959,7 @@ const PLATOS = [
     categoria: "Platos_Tipicos",
     nombre: "1/4 Cuy Estofado",
     precio: "S/ 25",
-    imagen: "images/cuarto-cuy-estofado.jpg",
+    imagen: "images/cuarto-cuy-estofado.png",
     resumen: "Cuy cocido lentamente en un delicioso aderezo tradicional.",
     descripcion:
       "Un cuarto de cuy preparado en un sabroso estofado con ají panca, cebolla, tomate y especias. Se acompaña con arroz y papas sancochadas.",
@@ -2300,6 +2301,143 @@ const PLATOS = [
   },
 
   // =====================
+  // Bebidas
+  // =====================
+
+  {
+    id: "agua-mineral",
+    categoria: "Bebidas",
+    nombre: "Agua Mineral",
+    precio: "Desde S/ 3",
+    imagen: "images/agua-mineral.jpg",
+    resumen: "Agua mineral disponible en diferentes presentaciones.",
+    descripcion: "Agua mineral disponible en diferentes presentaciones.",
+    preparado: false,
+    caracteristicas: [
+      { etiqueta: "Presentación", valor: "500ml / 1L" },
+      { etiqueta: "Tipo", valor: "Producto embotellado" },
+    ],
+  },
+
+  {
+    id: "agua-mineral-saborizada",
+    categoria: "Bebidas",
+    nombre: "Agua Mineral Saborizada",
+    precio: "S/ 3",
+    imagen: "images/agua-saborizada.jpg",
+    resumen: "Agua mineral saborizada en diferentes variedades.",
+    descripcion:
+      "Agua mineral saborizada disponible en deliciosos sabores para disfrutar bien fría.",
+    caracteristicas: [
+      { etiqueta: "Sabores", valor: "Manzana, maracuyá, limón y arándano" },
+      { etiqueta: "Precio", valor: "S/ 3" },
+    ],
+  },
+
+  {
+    id: "agua-con-gas",
+    categoria: "Bebida",
+    nombre: "Agua con Gas",
+    precio: "S/ 3.50",
+    imagen: "images/agua-con-gas.jpg",
+    resumen: "Agua mineral con gas en presentación de 750 ml.",
+    descripcion:
+      "Agua mineral con gas, ideal para acompañar tus platos y disfrutar bien fría.",
+    caracteristicas: [
+      { etiqueta: "Presentación", valor: "750 ml" },
+      { etiqueta: "Precio", valor: "S/ 3.50" },
+    ],
+  },
+
+  {
+    id: "inca-kola",
+    categoria: "Bebida",
+    nombre: "Inca Kola",
+    precio: "Desde S/ 3",
+    imagen: "images/inca-kola.jpg",
+    resumen:
+      "La tradicional bebida gaseosa peruana en diferentes presentaciones.",
+    descripcion:
+      "Inca Kola disponible en diferentes tamaños y presentaciones para acompañar tus comidas.",
+    caracteristicas: [
+      { etiqueta: "296 ml", valor: "S/ 3" },
+      { etiqueta: "600 ml", valor: "S/ 4" },
+      { etiqueta: "625 ml", valor: "S/ 9" },
+      { etiqueta: "1 L", valor: "S/ 8" },
+      { etiqueta: "2 L", valor: "S/ 12" },
+      { etiqueta: "3 L", valor: "S/ 18" },
+      { etiqueta: "Lata", valor: "S/ 6" },
+    ],
+  },
+
+  {
+    id: "coca-cola",
+    categoria: "Bebida",
+    nombre: "Coca Cola",
+    precio: "Desde S/ 3",
+    imagen: "images/coca-cola.jpg",
+    resumen:
+      "Bebida gaseosa Coca Cola disponible en diferentes presentaciones.",
+    descripcion:
+      "Coca Cola disponible en diferentes tamaños para acompañar tus comidas.",
+    caracteristicas: [
+      { etiqueta: "296 ml", valor: "S/ 3" },
+      { etiqueta: "600 ml", valor: "S/ 4" },
+      { etiqueta: "1 L", valor: "S/ 8" },
+      { etiqueta: "2 L", valor: "S/ 12" },
+      { etiqueta: "3 L", valor: "S/ 18" },
+      { etiqueta: "Lata", valor: "S/ 6" },
+    ],
+  },
+
+  {
+    id: "fanta",
+    categoria: "Bebida",
+    nombre: "Fanta",
+    precio: "Desde S/ 3",
+    imagen: "images/fanta.jpg",
+    resumen: "Bebida gaseosa Fanta disponible en diferentes presentaciones.",
+    descripcion:
+      "Fanta disponible en diferentes tamaños para disfrutar bien fría.",
+    caracteristicas: [
+      { etiqueta: "296 ml", valor: "S/ 3" },
+      { etiqueta: "1 L", valor: "S/ 12" },
+      { etiqueta: "Lata", valor: "S/ 5" },
+    ],
+  },
+
+  {
+    id: "sprite",
+    categoria: "Bebida",
+    nombre: "Sprite",
+    precio: "Desde S/ 3",
+    imagen: "images/sprite.jpg",
+    resumen: "Bebida gaseosa Sprite disponible en diferentes presentaciones.",
+    descripcion:
+      "Sprite disponible en diferentes presentaciones para acompañar tus comidas.",
+    caracteristicas: [
+      { etiqueta: "296 ml", valor: "S/ 3" },
+      { etiqueta: "Lata", valor: "Precio pendiente" },
+    ],
+  },
+
+  {
+    id: "frugo",
+    categoria: "Bebida",
+    nombre: "Frugo",
+    precio: "Desde S/ 2",
+    imagen: "images/frugo.jpg",
+    resumen: "Bebida Frugo disponible en diferentes presentaciones.",
+    descripcion:
+      "Bebida Frugo disponible en diferentes tamaños para disfrutar fría.",
+    caracteristicas: [
+      { etiqueta: "Durazno 1 L", valor: "S/ 3" },
+      { etiqueta: "Pomito", valor: "S/ 2" },
+      { etiqueta: "Cajita", valor: "S/ 6" },
+    ],
+  },
+
+  // =====================
   // Bebidas calientes
   // =====================
   {
@@ -2352,27 +2490,7 @@ const PLATOS = [
       "Servir caliente.",
     ],
   },
-
-  {
-    id: "leche-vaca",
-    categoria: "Bebidas_Calientes",
-    nombre: "Leche de Vaca",
-    precio: "S/ 5",
-    imagen: "images/leche-vaca.jpg",
-    resumen: "Leche fresca de vaca servida caliente.",
-    descripcion:
-      "Leche fresca proveniente de productores locales de Cajamarca, calentada al momento para conservar su sabor y propiedades nutricionales.",
-    caracteristicas: [
-      { etiqueta: "Porción", valor: "1 taza (300 ml)" },
-      { etiqueta: "Temperatura", valor: "Caliente" },
-      { etiqueta: "Origen", valor: "Cajamarca" },
-      { etiqueta: "Preparación", valor: "Al instante" },
-      { etiqueta: "Ideal para", valor: "Toda la familia" },
-    ],
-    ingredientes: ["Leche fresca de vaca"],
-    preparacion: ["Calentar la leche.", "Servir caliente."],
-  },
-
+  
   {
     id: "filtrante",
     categoria: "Bebidas_Calientes",
@@ -2950,6 +3068,7 @@ const PLATOS = [
     ],
   },
 ];
+
 function obtenerPlatoPorId(id) {
   return PLATOS.find((p) => p.id === id);
 }
