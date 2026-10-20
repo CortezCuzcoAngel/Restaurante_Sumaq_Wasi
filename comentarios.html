@@ -1,1 +1,124 @@
 
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios — Sumaq Wasi</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel = "icon" href="images/logo.png" type ="image/png">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+    <body>
+
+    <div class="patron-textil"></div>
+
+    <header class="site-header">
+        <nav class="container nav">
+        <a href="index.html" class="logo">
+            <span class="logo-marca">SW</span>
+            <span>Sumaq Wasi<small>Cocina Cajamarquina</small></span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="menu.html">Platos</a></li>
+            <li><a href="index.html#galeria">Galería</a></li>
+            <li><a href="index.html#ubicacion">Ubicación</a></li>
+                        <li><a href="comentarios.html" class="activo">Comentarios</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-hero">
+        <div class="container">
+            <p class="eyebrow">Tu opinión nos ayuda</p>
+            <h1>Comentarios de nuestros clientes</h1>
+            <p>Cuéntanos cómo fue tu experiencia en Sumaq Wasi.</p>
+        </div>
+        </section>
+
+        <section class="comentarios-seccion">
+        <div class="container comentarios-layout">
+
+            <div class="comentario-formulario">
+            <h2>Déjanos tu opinión</h2>
+
+            <form id="form-comentario">
+                <label for="nombre-comentario">Tu nombre</label>
+                <input id="nombre-comentario" name="nombre"
+                type="text" maxlength="60" required
+                placeholder="Escribe tu nombre">
+
+                <label>Califica la atención</label>
+                <div class="estrellas" data-aspecto="atencion">
+                <input type="hidden" name="atencion" value="0">
+                <button type="button" aria-label="1 estrella" data-valor="1">★</button>
+                <button type="button" aria-label="2 estrellas" data-valor="2">★</button>
+                <button type="button" aria-label="3 estrellas" data-valor="3">★</button>
+                <button type="button" aria-label="4 estrellas" data-valor="4">★</button>
+                <button type="button" aria-label="5 estrellas" data-valor="5">★</button>
+                </div>
+
+                <label>Califica la comida</label>
+                <div class="estrellas" data-aspecto="comida">
+                <input type="hidden" name="comida" value="0">
+                <button type="button" aria-label="1 estrella" data-valor="1">★</button>
+                <button type="button" aria-label="2 estrellas" data-valor="2">★</button>
+                <button type="button" aria-label="3 estrellas" data-valor="3">★</button>
+                <button type="button" aria-label="4 estrellas" data-valor="4">★</button>
+                <button type="button" aria-label="5 estrellas" data-valor="5">★</button>
+                </div>
+
+                <label>Califica el ambiente</label>
+                <div class="estrellas" data-aspecto="ambiente">
+                <input type="hidden" name="ambiente" value="0">
+                <button type="button" aria-label="1 estrella" data-valor="1">★</button>
+                <button type="button" aria-label="2 estrellas" data-valor="2">★</button>
+                <button type="button" aria-label="3 estrellas" data-valor="3">★</button>
+                <button type="button" aria-label="4 estrellas" data-valor="4">★</button>
+                <button type="button" aria-label="5 estrellas" data-valor="5">★</button>
+                </div>
+
+                <label for="texto-comentario">Comentario</label>
+                <textarea id="texto-comentario" name="comentario"
+                maxlength="600" rows="5" required
+                placeholder="¿Qué te pareció tu experiencia?"></textarea>
+
+                <button class="btn btn-primario" type="submit">
+                Publicar comentario
+                </button>
+
+                <p id="mensaje-formulario" role="status"></p>
+            </form>
+            </div>
+
+            <div class="comentarios-listado">
+            <h2>Opiniones recientes</h2>
+            <div id="resumen-calificaciones"></div>
+            <div id="lista-comentarios"></div>
+            </div>
+
+        </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Sumaq Wasi. Todos los derechos reservados.</span>
+            <span>Cajamarca, Perú</span>
+        </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/comentarios.js"></script>
+    </body>
+    </html>
+
