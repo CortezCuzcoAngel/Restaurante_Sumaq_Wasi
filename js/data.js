@@ -73,6 +73,32 @@ const PLATOS = [
       "Preparar una taza de café cajamarquino recién pasado y servir junto al plato.",
     ],
   },
+  {
+    id: "tilapia-frita-yuca-cafe",
+    categoria: "Desayunos",
+    nombre: "Tilapia Frita con Yuca + Café",
+    precio: "S/ 20.00",
+    imagen: "images/tilapia-frita.jpg",
+    resumen: "Tilapia frita acompañada de yuca y café pasado.",
+    descripcion: "Tilapia frita servida con yuca y una taza de café pasado.",
+    caracteristicas: [
+      { etiqueta: "Acompañamiento", valor: "Yuca" },
+      { etiqueta: "Bebida incluida", valor: "Café pasado" },
+    ],
+    ingredientes: [
+      "Tilapia",
+      "Yuca",
+      "Aceite",
+      "Sal y condimentos",
+      "Café pasado",
+    ],
+    preparacion: [
+      "Sazonar la tilapia con sal y condimentos.",
+      "Freír la tilapia hasta que esté dorada y bien cocida.",
+      "Cocinar la yuca hasta que esté suave.",
+      "Preparar el café pasado y servirlo junto con la tilapia y la yuca.",
+    ],
+  },
 
   // =====================
   // Caldos
@@ -2301,139 +2327,138 @@ const PLATOS = [
   },
 
   // =====================
-  // Bebidas
+  // Batidos
   // =====================
 
   {
-    id: "agua-mineral",
-    categoria: "Bebidas",
-    nombre: "Agua Mineral",
-    precio: "Desde S/ 3",
-    imagen: "images/agua-mineral.jpg",
-    resumen: "Agua mineral disponible en diferentes presentaciones.",
-    descripcion: "Agua mineral disponible en diferentes presentaciones.",
-    preparado: false,
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "500ml / 1L" },
-      { etiqueta: "Tipo", valor: "Producto embotellado" },
+    id: "batido-arandano",
+    categoria: "Batidos",
+    nombre: "Batido de Arándano",
+    precio: "S/ 14.00",
+    imagen: "images/batido-arandano.jpg",
+    resumen: "Batido de arándano con leche evaporada.",
+    descripcion: "Batido cremoso de arándanos combinado con leche evaporada.",
+    caracteristicas: [{ etiqueta: "Base", valor: "Leche evaporada" }],
+    ingredientes: [
+      "Arándanos",
+      "Leche evaporada",
+      "Azúcar al gusto",
+      "Hielo (opcional)",
+    ],
+    preparacion: [
+      "Colocar los arándanos y la leche evaporada en la licuadora.",
+      "Añadir azúcar al gusto y hielo si se desea.",
+      "Licuar hasta obtener una bebida cremosa y servir.",
     ],
   },
-
   {
-    id: "agua-mineral-saborizada",
-    categoria: "Bebidas",
-    nombre: "Agua Mineral Saborizada",
-    precio: "S/ 3",
-    imagen: "images/agua-saborizada.jpg",
-    resumen: "Agua mineral saborizada en diferentes variedades.",
+    id: "batido-arandano-fresas",
+    categoria: "Batidos",
+    nombre: "Batido de Arándano y Fresas",
+    precio: "S/ 14.00",
+    imagen: "images/batido-arandano-fresas.jpg",
+    resumen: "Batido de arándanos y fresas con leche evaporada.",
     descripcion:
-      "Agua mineral saborizada disponible en deliciosos sabores para disfrutar bien fría.",
-    caracteristicas: [
-      { etiqueta: "Sabores", valor: "Manzana, maracuyá, limón y arándano" },
-      { etiqueta: "Precio", valor: "S/ 3" },
+      "Combinación frutal de arándanos y fresas, preparada con leche evaporada.",
+    caracteristicas: [{ etiqueta: "Base", valor: "Leche evaporada" }],
+    ingredientes: [
+      "Arándanos",
+      "Fresas",
+      "Leche evaporada",
+      "Azúcar al gusto",
+      "Hielo (opcional)",
+    ],
+    preparacion: [
+      "Lavar las frutas y colocarlas en la licuadora.",
+      "Agregar la leche evaporada, azúcar al gusto y hielo si se desea.",
+      "Licuar hasta integrar y servir.",
     ],
   },
-
   {
-    id: "agua-con-gas",
-    categoria: "Bebida",
-    nombre: "Agua con Gas",
-    precio: "S/ 3.50",
-    imagen: "images/agua-con-gas.jpg",
-    resumen: "Agua mineral con gas en presentación de 750 ml.",
+    id: "batido-fresas",
+    categoria: "Batidos",
+    nombre: "Batido de Fresas",
+    precio: "S/ 12.00",
+    imagen: "images/batido-fresas.jpg",
+    resumen: "Batido de fresas con leche evaporada.",
     descripcion:
-      "Agua mineral con gas, ideal para acompañar tus platos y disfrutar bien fría.",
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "750 ml" },
-      { etiqueta: "Precio", valor: "S/ 3.50" },
+      "Batido de fresas de textura cremosa, elaborado con leche evaporada.",
+    caracteristicas: [{ etiqueta: "Base", valor: "Leche evaporada" }],
+    ingredientes: [
+      "Fresas",
+      "Leche evaporada",
+      "Azúcar al gusto",
+      "Hielo (opcional)",
+    ],
+    preparacion: [
+      "Lavar las fresas y retirar sus hojas.",
+      "Colocar las fresas y la leche evaporada en la licuadora.",
+      "Añadir azúcar al gusto y hielo si se desea; licuar y servir.",
     ],
   },
-
   {
-    id: "inca-kola",
-    categoria: "Bebida",
-    nombre: "Inca Kola",
-    precio: "Desde S/ 3",
-    imagen: "images/inca-kola.jpg",
-    resumen:
-      "La tradicional bebida gaseosa peruana en diferentes presentaciones.",
-    descripcion:
-      "Inca Kola disponible en diferentes tamaños y presentaciones para acompañar tus comidas.",
-    caracteristicas: [
-      { etiqueta: "296 ml", valor: "S/ 3" },
-      { etiqueta: "600 ml", valor: "S/ 4" },
-      { etiqueta: "625 ml", valor: "S/ 9" },
-      { etiqueta: "1 L", valor: "S/ 8" },
-      { etiqueta: "2 L", valor: "S/ 12" },
-      { etiqueta: "3 L", valor: "S/ 18" },
-      { etiqueta: "Lata", valor: "S/ 6" },
+    id: "batido-papaya",
+    categoria: "Batidos",
+    nombre: "Batido de Papaya",
+    precio: "S/ 12.00",
+    imagen: "images/batido-papaya.jpg",
+    resumen: "Batido de papaya con leche evaporada.",
+    descripcion: "Batido suave y cremoso de papaya con leche evaporada.",
+    caracteristicas: [{ etiqueta: "Base", valor: "Leche evaporada" }],
+    ingredientes: [
+      "Papaya",
+      "Leche evaporada",
+      "Azúcar al gusto",
+      "Hielo (opcional)",
+    ],
+    preparacion: [
+      "Pelar la papaya, retirar las semillas y cortarla en trozos.",
+      "Colocar la papaya y la leche evaporada en la licuadora.",
+      "Añadir azúcar al gusto y hielo si se desea; licuar y servir.",
     ],
   },
-
   {
-    id: "coca-cola",
-    categoria: "Bebida",
-    nombre: "Coca Cola",
-    precio: "Desde S/ 3",
-    imagen: "images/coca-cola.jpg",
-    resumen:
-      "Bebida gaseosa Coca Cola disponible en diferentes presentaciones.",
+    id: "batido-platano",
+    categoria: "Batidos",
+    nombre: "Batido de Plátano",
+    precio: "S/ 12.00",
+    imagen: "images/batido-platano.jpg",
+    resumen: "Batido de plátano con leche evaporada.",
     descripcion:
-      "Coca Cola disponible en diferentes tamaños para acompañar tus comidas.",
-    caracteristicas: [
-      { etiqueta: "296 ml", valor: "S/ 3" },
-      { etiqueta: "600 ml", valor: "S/ 4" },
-      { etiqueta: "1 L", valor: "S/ 8" },
-      { etiqueta: "2 L", valor: "S/ 12" },
-      { etiqueta: "3 L", valor: "S/ 18" },
-      { etiqueta: "Lata", valor: "S/ 6" },
+      "Batido de plátano de sabor dulce y textura cremosa, preparado con leche evaporada.",
+    caracteristicas: [{ etiqueta: "Base", valor: "Leche evaporada" }],
+    ingredientes: [
+      "Plátano",
+      "Leche evaporada",
+      "Azúcar al gusto",
+      "Hielo (opcional)",
+    ],
+    preparacion: [
+      "Pelar el plátano y cortarlo en trozos.",
+      "Colocar el plátano y la leche evaporada en la licuadora.",
+      "Añadir azúcar al gusto y hielo si se desea; licuar y servir.",
     ],
   },
-
   {
-    id: "fanta",
-    categoria: "Bebida",
-    nombre: "Fanta",
-    precio: "Desde S/ 3",
-    imagen: "images/fanta.jpg",
-    resumen: "Bebida gaseosa Fanta disponible en diferentes presentaciones.",
+    id: "batido-mango",
+    categoria: "Batidos",
+    nombre: "Batido de Mango",
+    precio: "S/ 12.00",
+    imagen: "images/batido-mango.jpg",
+    resumen: "Batido de mango con leche evaporada.",
     descripcion:
-      "Fanta disponible en diferentes tamaños para disfrutar bien fría.",
-    caracteristicas: [
-      { etiqueta: "296 ml", valor: "S/ 3" },
-      { etiqueta: "1 L", valor: "S/ 12" },
-      { etiqueta: "Lata", valor: "S/ 5" },
+      "Batido tropical de mango con leche evaporada, de textura cremosa.",
+    caracteristicas: [{ etiqueta: "Base", valor: "Leche evaporada" }],
+    ingredientes: [
+      "Mango",
+      "Leche evaporada",
+      "Azúcar al gusto",
+      "Hielo (opcional)",
     ],
-  },
-
-  {
-    id: "sprite",
-    categoria: "Bebida",
-    nombre: "Sprite",
-    precio: "Desde S/ 3",
-    imagen: "images/sprite.jpg",
-    resumen: "Bebida gaseosa Sprite disponible en diferentes presentaciones.",
-    descripcion:
-      "Sprite disponible en diferentes presentaciones para acompañar tus comidas.",
-    caracteristicas: [
-      { etiqueta: "296 ml", valor: "S/ 3" },
-      { etiqueta: "Lata", valor: "Precio pendiente" },
-    ],
-  },
-
-  {
-    id: "frugo",
-    categoria: "Bebida",
-    nombre: "Frugo",
-    precio: "Desde S/ 2",
-    imagen: "images/frugo.jpg",
-    resumen: "Bebida Frugo disponible en diferentes presentaciones.",
-    descripcion:
-      "Bebida Frugo disponible en diferentes tamaños para disfrutar fría.",
-    caracteristicas: [
-      { etiqueta: "Durazno 1 L", valor: "S/ 3" },
-      { etiqueta: "Pomito", valor: "S/ 2" },
-      { etiqueta: "Cajita", valor: "S/ 6" },
+    preparacion: [
+      "Pelar el mango, retirar la pepa y cortarlo en trozos.",
+      "Colocar el mango y la leche evaporada en la licuadora.",
+      "Añadir azúcar al gusto y hielo si se desea; licuar y servir.",
     ],
   },
 
@@ -2490,7 +2515,7 @@ const PLATOS = [
       "Servir caliente.",
     ],
   },
-  
+
   {
     id: "filtrante",
     categoria: "Bebidas_Calientes",
@@ -2643,161 +2668,118 @@ const PLATOS = [
   // =====================
   // Tragos
   // =====================
-
   {
-    id: "pisco-sour",
+    id: "pisco-sour-copa",
     categoria: "Tragos",
-    nombre: "Pisco Sour (Copa)",
-    precio: "S/ 15",
-    imagen: "images/pisco-sour.jpg",
-    resumen:
-      "El cóctel bandera del Perú, preparado con pisco, limón y clara de huevo.",
+    nombre: "Pisco Sour Copa",
+    precio: "S/ 15.00",
+    imagen: "images/pisco-sour-copa.jpg",
+    resumen: "Cóctel clásico peruano a base de pisco.",
     descripcion:
-      "Tradicional Pisco Sour elaborado con pisco peruano, jugo de limón recién exprimido, jarabe de goma, clara de huevo y unas gotas de amargo de angostura. Una bebida equilibrada, refrescante y de sabor inconfundible.",
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "Copa" },
-      { etiqueta: "Contenido", valor: "250 ml" },
-      { etiqueta: "Alcohol", valor: "Sí" },
-      { etiqueta: "Origen", valor: "Perú" },
-      { etiqueta: "Preparación", valor: "Al instante" },
-    ],
+      "Pisco Sour preparado con pisco, limón, jarabe de goma y clara de huevo, con un toque de amargo de angostura.",
+    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
     ingredientes: [
-      "Pisco peruano",
+      "Pisco",
       "Jugo de limón",
       "Jarabe de goma",
       "Clara de huevo",
       "Amargo de angostura",
-      "Hielo",
     ],
     preparacion: [
-      "Colocar todos los ingredientes en una coctelera.",
-      "Agitar vigorosamente con hielo.",
-      "Servir en una copa.",
-      "Decorar con gotas de amargo de angostura.",
+      "Agregar el pisco, el jugo de limón, el jarabe de goma y la clara de huevo a una coctelera.",
+      "Batir con hielo hasta enfriar y lograr una mezcla espumosa.",
+      "Servir en una copa y añadir unas gotas de amargo de angostura.",
     ],
   },
-
   {
     id: "pisco-sour-maracuya",
     categoria: "Tragos",
     nombre: "Pisco Sour Maracuyá",
-    precio: "S/ 15",
+    precio: "S/ 15.00",
     imagen: "images/pisco-sour-maracuya.jpg",
-    resumen: "Variante del clásico Pisco Sour con pulpa natural de maracuyá.",
+    resumen: "Pisco Sour con el sabor tropical del maracuyá.",
     descripcion:
-      "Una deliciosa combinación del tradicional Pisco Sour con el sabor tropical del maracuyá, logrando una bebida refrescante y ligeramente dulce.",
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "Copa" },
-      { etiqueta: "Contenido", valor: "250 ml" },
-      { etiqueta: "Alcohol", valor: "Sí" },
-      { etiqueta: "Origen", valor: "Perú" },
-      { etiqueta: "Sabor", valor: "Dulce y tropical" },
-    ],
+      "Cóctel de pisco con maracuyá, limón y jarabe de goma, de sabor frutal y ligeramente ácido.",
+    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
     ingredientes: [
-      "Pisco peruano",
-      "Pulpa de maracuyá",
+      "Pisco",
+      "Pulpa o jugo de maracuyá",
+      "Jugo de limón",
       "Jarabe de goma",
-      "Clara de huevo",
+      "Clara de huevo (opcional)",
       "Hielo",
     ],
     preparacion: [
-      "Agregar todos los ingredientes en una coctelera.",
-      "Agitar hasta obtener espuma.",
-      "Servir en una copa fría.",
-      "Decorar con pulpa de maracuyá.",
+      "Colocar el pisco, el maracuyá, el limón y el jarabe de goma en una coctelera.",
+      "Agregar hielo y batir hasta que esté bien frío.",
+      "Si se usa clara, batir hasta obtener espuma.",
+      "Servir en una copa.",
     ],
   },
-
   {
     id: "pina-colada",
     categoria: "Tragos",
     nombre: "Piña Colada",
-    precio: "S/ 15",
+    precio: "S/ 15.00",
     imagen: "images/pina-colada.jpg",
-    resumen: "Cóctel tropical preparado con piña, crema de coco y ron.",
-    descripcion:
-      "Refrescante bebida tropical elaborada con jugo de piña, crema de coco, ron blanco y hielo, perfecta para disfrutar en cualquier ocasión.",
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "Copa" },
-      { etiqueta: "Contenido", valor: "300 ml" },
-      { etiqueta: "Alcohol", valor: "Sí" },
-      { etiqueta: "Origen", valor: "Caribe" },
-      { etiqueta: "Preparación", valor: "Licuada" },
-    ],
-    ingredientes: ["Ron blanco", "Jugo de piña", "Crema de coco", "Hielo"],
+    resumen: "Cóctel cremoso de piña y coco.",
+    descripcion: "Bebida tropical preparada con ron, piña y crema de coco.",
+    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
+    ingredientes: ["Ron", "Jugo de piña", "Crema de coco", "Hielo"],
     preparacion: [
-      "Licuar todos los ingredientes.",
+      "Colocar el ron, el jugo de piña, la crema de coco y el hielo en una licuadora.",
+      "Licuar hasta obtener una mezcla cremosa.",
       "Servir en una copa.",
-      "Decorar con una rodaja de piña.",
     ],
   },
-
   {
     id: "sangria-1-litro",
     categoria: "Tragos",
-    nombre: "Sangría (1 Litro)",
-    precio: "S/ 30",
+    nombre: "Sangría 1 L",
+    precio: "S/ 30.00",
     imagen: "images/sangria.jpg",
-    resumen:
-      "Jarra de sangría preparada con vino tinto, frutas frescas y hielo.",
+    resumen: "Sangría frutal para compartir.",
     descripcion:
-      "Tradicional sangría elaborada con vino tinto, frutas de temporada, jugo natural y hielo. Ideal para compartir entre amigos y familiares.",
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "Jarra de 1 litro" },
-      { etiqueta: "Alcohol", valor: "Sí" },
-      { etiqueta: "Ideal para", valor: "Compartir" },
-      { etiqueta: "Origen", valor: "España" },
-      { etiqueta: "Rinde", valor: "4 a 5 vasos" },
-    ],
+      "Bebida preparada con vino y frutas, de sabor fresco y frutal.",
+    caracteristicas: [{ etiqueta: "Presentación", valor: "1 litro" }],
     ingredientes: [
       "Vino tinto",
-      "Naranja",
-      "Manzana",
-      "Durazno",
+      "Frutas picadas, como manzana y naranja",
       "Jugo de naranja",
-      "Azúcar",
+      "Gaseosa o agua con gas (opcional)",
       "Hielo",
     ],
     preparacion: [
-      "Cortar las frutas.",
-      "Mezclarlas con el vino y el jugo.",
-      "Agregar azúcar y hielo.",
-      "Refrigerar unos minutos antes de servir.",
+      "Colocar el vino y las frutas picadas en una jarra.",
+      "Añadir el jugo de naranja y, si se desea, gaseosa o agua con gas.",
+      "Mezclar y refrigerar para integrar los sabores.",
+      "Servir con hielo.",
     ],
   },
-
   {
     id: "machu-picchu",
     categoria: "Tragos",
-    nombre: "Cóctel Machu Picchu",
-    precio: "S/ 22",
+    nombre: "Machu Picchu",
+    precio: "S/ 22.00",
     imagen: "images/machu-picchu.jpg",
-    resumen:
-      "Cóctel peruano de tres capas elaborado con pisco, granadina y crema de menta.",
+    resumen: "Cóctel colorido con capas de distintos sabores.",
     descripcion:
-      "Uno de los cócteles más representativos del Perú, famoso por sus tres colores inspirados en la bandera del Imperio Inca. Se prepara cuidadosamente para mantener sus capas bien definidas.",
-    caracteristicas: [
-      { etiqueta: "Presentación", valor: "Copa" },
-      { etiqueta: "Contenido", valor: "250 ml" },
-      { etiqueta: "Alcohol", valor: "Sí" },
-      { etiqueta: "Origen", valor: "Perú" },
-      { etiqueta: "Especialidad", valor: "Tres capas de color" },
-    ],
+      "Cóctel preparado con pisco, menta, granadina y jugo de naranja, conocido por sus colores en capas.",
+    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
     ingredientes: [
       "Pisco",
-      "Jugo de naranja",
+      "Crema de menta verde",
       "Granadina",
-      "Crema de menta",
+      "Jugo de naranja",
       "Hielo",
     ],
     preparacion: [
-      "Preparar la base con pisco y jugo de naranja.",
-      "Servir cuidadosamente en la copa.",
-      "Agregar lentamente la granadina y luego la crema de menta para formar las capas.",
-      "Servir inmediatamente.",
+      "Llenar una copa alta con hielo.",
+      "Agregar el pisco y el jugo de naranja.",
+      "Incorporar lentamente la crema de menta.",
+      "Añadir la granadina al final para formar el efecto de colores en capas.",
     ],
   },
-
   // =====================
   // Guardiciones
   // =====================
