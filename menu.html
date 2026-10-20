@@ -26,6 +26,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       <li><a href="menu.html" class="activo">Platos</a></li>
       <li><a href="index.html#galeria">Galería</a></li>
       <li><a href="index.html#ubicacion">Ubicación</a></li>
+      <li><a href="comentarios.html">Comentarios</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Abrir menú">☰</button>
   </nav>
@@ -36,7 +37,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <div class="container">
       <p class="eyebrow">Nuestra carta</p>
       <h1>Todo el sabor de Cajamarca, en un solo lugar</h1>
-      <p>Toca "Ver preparación" en cualquier plato para abrir, en una nueva pestaña, su descripción completa, características e ingredientes con el paso a paso de su preparación.</p>
+      <p>En Sumaq Wasi te esperamos con platos que nos recuerdan a nuestra tierra y el sabor de la cocina cajamarquina. Explora nuestra carta y encuentra tu favorito.
+
+      ¿Quieres saber cómo se prepara? En cada plato puedes ver sus ingredientes, conocer un poco más sobre él y descubrir cómo lo hacemos..
+    </p>
 
       <div class="filtros" id="filtros">
   <button class="filtro-btn activo" data-categoria="Todos">Todos</button>
@@ -129,10 +133,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   // Categorías que entran en cada grupo
   const GRUPOS = {
     "menu-dia": [
-      "Ceviches", "Chicharron", "Mariscos", "Jalea", "Parihuelas","Bebidas","Energisantes","Piscos", "Cervesas","Vinos","Tragos","Whisky",
+      "Ceviches", "Chicharron", "Mariscos", "Jalea", "Parihuelas","Tragos",
     ],
     "carta": [
-      "Desayunos", "Platos_Tipicos", "Platos_a_la_carta","Guarniciones","Entradas", "Dietas", "Postres","Bebidas_frias", "Bebidas_Calientes", "Caldos",
+      "Desayunos", "Platos_Tipicos", "Platos_a_la_carta","Guarniciones","Entradas", "Dietas", "Postres","Bebidas_frias", "Bebidas_Calientes", "Caldos", "Sanduiches", "Batidos",
     ]
   };
 
@@ -158,12 +162,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     "Mariscos": "Mariscos",
     "Jalea": "Jalea",
     "Parihuelas": "Parihuelas",
-    "Piscos": "Piscos",
-    "Bebidas": "Bebidas",
-    "Energisantes": "Energizantes",
-    "Cervesas": "Cervezas",
-    "Vinos": "Vinos",
-    "Whisky": "Whisky",
+    "Batidos": "Batidos",
   };
 
   function marcarFotosSinArchivo() {
