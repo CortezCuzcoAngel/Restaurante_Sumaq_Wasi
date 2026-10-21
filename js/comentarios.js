@@ -1,21 +1,53 @@
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 
-    const CLAVE_COMENTARIOS = "sumaqwasi_comentarios";
+    import {
+    getFirestore,
+    collection,
+    addDoc,
+    deleteDoc,
+    doc,
+    onSnapshot,
+    query,
+    orderBy,
+    } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-    // Lee los comentarios guardados en este navegador.
-    function leerComentarios() {
-    try {
-        return JSON.parse(localStorage.getItem(CLAVE_COMENTARIOS)) || [];
-    } catch {
-        return [];
-    }
-    }
+    import {
+    getAuth,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+    browserSessionPersistence,
+    setPersistence,
+    } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 
-    // Guarda la lista actual.
-    function guardarComentarios(comentarios) {
-    localStorage.setItem(CLAVE_COMENTARIOS, JSON.stringify(comentarios));
-    }
+    // 1. Pega aquí la configuración de tu aplicación web Firebase.
+    const firebaseConfig = {
+    apiKey: "AIzaSyBPpkjAIk9e9lqUPfAG_5jVJU3y6Ha79BU",
+    authDomain: "sumaq-wasi-comentarios.firebaseapp.com",
+    projectId: "sumaq-wasi-comentarios",
+    storageBucket: "sumaq-wasi-comentarios.firebasestorage.app",
+    messagingSenderId: "903559074396",
+    appId: "1:903559074396:web:b65858b4c502ea97010c99",
+    measurementId: "G-SFK6JE42C3",
+    };
 
-    // Escapa texto para que un comentario no pueda insertar HTML.
+    // 2. Inicializar Firebase, Firestore y Authentication.
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    const UID_ADMIN = "G8FTAJ0KFBfOhOpCABGaj1bpSRh2";
+
+    const comentariosRef = collection(db, "comentarios");
+
+    let modoAdministrador = false;
+
+    // Mantener la sesión de administrador solo en esta sesión del navegador.
+    setPersistence(auth, browserSessionPersistence).catch((error) => {
+    console.error("No se pudo configurar la sesión:", error);
+    });
+
+    // Escapar texto para evitar que un comentario inserte HTML.
     function escaparHTML(texto) {
     return String(texto).replace(
         /[&<>"']/g,
@@ -30,7 +62,7 @@
     );
     }
 
-    // Configura las estrellas de cada categoría.
+    // Preparar y mostrar las estrellas.
     document.querySelectorAll(".estrellas").forEach((grupo) => {
     const botones = grupo.querySelectorAll("button");
     const campo = grupo.querySelector("input");
@@ -46,7 +78,11 @@
     botones.forEach((boton) => {
         boton.addEventListener("click", () => {
         seleccion = Number(boton.dataset.valor);
-        campo.value = seleccion;
+
+        if (campo) {
+            campo.value = seleccion;
+        }
+
         pintarEstrellas(seleccion);
         });
 
@@ -60,9 +96,8 @@
     });
     });
 
-    // Presenta las opiniones y el promedio de cada aspecto.
-    function mostrarComentarios() {
-    const comentarios = leerComentarios();
+    // Mostrar comentarios y promedios.
+    function mostrarComentarios(comentarios) {
     const lista = document.getElementById("lista-comentarios");
     const resumen = document.getElementById("resumen-calificaciones");
 
@@ -75,64 +110,105 @@
     }
 
     const promedio = (aspecto) => {
-        const total = comentarios.reduce((suma, c) => suma + c[aspecto], 0);
+        const total = comentarios.reduce(
+        (suma, comentario) => suma + Number(comentario[aspecto] || 0),
+        0,
+        );
+
         return (total / comentarios.length).toFixed(1);
     };
 
     resumen.innerHTML = `
-        <p><strong>${comentarios.length}</strong> opinión(es)</p>
-        <p>Atención: ⭐ ${promedio("atencion")} / 5</p>
-        <p>Comida: ⭐ ${promedio("comida")} / 5</p>
-        <p>Ambiente: ⭐ ${promedio("ambiente")} / 5</p>
-    `;
+            <p><strong>${comentarios.length}</strong> opinión(es)</p>
+            <p>Atención: ⭐ ${promedio("atencion")} / 5</p>
+            <p>Comida: ⭐ ${promedio("comida")} / 5</p>
+            <p>Ambiente: ⭐ ${promedio("ambiente")} / 5</p>
+        `;
 
     lista.innerHTML = comentarios
-        .slice()
-        .reverse()
         .map(
         (c) => `
-        <article class="comentario-card">
-        <div class="comentario-card-cabecera">
-            <strong>${escaparHTML(c.nombre)}</strong>
-            <small>${escaparHTML(c.fecha)}</small>
-        </div>
+            <article class="comentario-card">
+                <div class="comentario-card-cabecera">
+                    <strong>${escaparHTML(c.nombre)}</strong>
+                    <small>${escaparHTML(c.fecha)}</small>
+                </div>
 
-        <p>Atención: ${"★".repeat(c.atencion)}${"☆".repeat(5 - c.atencion)}</p>
-        <p>Comida: ${"★".repeat(c.comida)}${"☆".repeat(5 - c.comida)}</p>
-        <p>Ambiente: ${"★".repeat(c.ambiente)}${"☆".repeat(5 - c.ambiente)}</p>
+                <p>Atención: ${"★".repeat(c.atencion)}${"☆".repeat(5 - c.atencion)}</p>
+                <p>Comida: ${"★".repeat(c.comida)}${"☆".repeat(5 - c.comida)}</p>
+                <p>Ambiente: ${"★".repeat(c.ambiente)}${"☆".repeat(5 - c.ambiente)}</p>
 
-        <p class="comentario-texto">${escaparHTML(c.comentario)}</p>
+                <p class="comentario-texto">${escaparHTML(c.comentario)}</p>
 
-        <button class="btn-eliminar-comentario"
-            type="button" data-eliminar="${escaparHTML(c.id)}">
-            Eliminar
-        </button>
-        </article>
-    `,
+                <button
+                    class="btn-eliminar-comentario"
+                    type="button"
+                    data-eliminar="${escaparHTML(c.id)}"
+                    ${modoAdministrador ? "" : "hidden"}
+                >
+                    Eliminar
+                </button>
+            </article>
+        `,
         )
         .join("");
 
-    // El botón de eliminar se habilita solo en modo administrador.
+    // El botón solo aparece en la interfaz del administrador.
+    // Firestore también verifica los permisos al intentar borrar.
     lista.querySelectorAll("[data-eliminar]").forEach((boton) => {
-        boton.hidden = !modoAdministrador;
-
-        boton.addEventListener("click", () => {
-        if (!modoAdministrador) return;
+        boton.addEventListener("click", async () => {
+        if (!modoAdministrador || auth.currentUser?.uid !== UID_ADMIN) {
+            return;
+        }
 
         const id = boton.dataset.eliminar;
-        const confirmar = window.confirm("¿Deseas eliminar este comentario?");
-        if (!confirmar) return;
 
-        guardarComentarios(leerComentarios().filter((c) => c.id !== id));
-        mostrarComentarios();
+        if (!window.confirm("¿Deseas eliminar este comentario?")) {
+            return;
+        }
+
+        try {
+            await deleteDoc(doc(db, "comentarios", id));
+        } catch (error) {
+            console.error("Error al eliminar:", error);
+            alert(
+            "No se pudo eliminar. Verifica que tu cuenta sea administradora.",
+            );
+        }
         });
     });
     }
 
-    // Publicar una opinión.
+    // 3. Escuchar la colección de Firestore en tiempo real.
+    // Los comentarios nuevos aparecerán también en otros dispositivos.
+    const consultaComentarios = query(comentariosRef, orderBy("fecha"));
+
+    onSnapshot(
+    consultaComentarios,
+    (snapshot) => {
+        const comentarios = snapshot.docs.map((documento) => ({
+        id: documento.id,
+        ...documento.data(),
+        }));
+
+        mostrarComentarios(comentarios);
+    },
+    (error) => {
+        console.error("Error al leer comentarios:", error);
+
+        const lista = document.getElementById("lista-comentarios");
+
+        if (lista) {
+        lista.textContent =
+            "No se pudieron cargar las opiniones. Intenta nuevamente más tarde.";
+        }
+    },
+    );
+
+    // 4. Publicar una opinión en Firestore.
     document
     .getElementById("form-comentario")
-    ?.addEventListener("submit", (evento) => {
+    ?.addEventListener("submit", async (evento) => {
         evento.preventDefault();
 
         const formulario = evento.currentTarget;
@@ -149,61 +225,89 @@
         if (
         !nombre ||
         !comentario ||
-        ![atencion, comida, ambiente].every((n) => n >= 1 && n <= 5)
+        nombre.length > 60 ||
+        comentario.length > 500 ||
+        ![atencion, comida, ambiente].every(
+            (n) => Number.isInteger(n) && n >= 1 && n <= 5,
+        )
         ) {
         mensaje.textContent =
             "Completa tu nombre, comentario y las tres calificaciones.";
         return;
         }
 
-        const nuevoComentario = {
-        id: crypto.randomUUID(),
-        nombre,
-        comentario,
-        atencion,
-        comida,
-        ambiente,
-        fecha: new Date().toLocaleDateString("es-PE"),
-        };
-
-        const comentarios = leerComentarios();
-        comentarios.push(nuevoComentario);
-        guardarComentarios(comentarios);
-
-        formulario.reset();
-        formulario.querySelectorAll(".estrellas").forEach((grupo) => {
-        grupo
-            .querySelectorAll("button")
-            .forEach((b) => b.classList.remove("seleccionada"));
+        try {
+        await addDoc(comentariosRef, {
+            nombre,
+            comentario,
+            atencion,
+            comida,
+            ambiente,
+            fecha: new Date().toLocaleDateString("es-PE"),
         });
 
+        formulario.reset();
+
+        formulario.querySelectorAll(".estrellas").forEach((grupo) => {
+            grupo.querySelectorAll("button").forEach((boton) => {
+            boton.classList.remove("seleccionada");
+            });
+        });
+
+        mensaje.textContent = "¡Gracias! Tu opinión se publicó correctamente.";
+        } catch (error) {
+        console.error("Error al publicar:", error);
         mensaje.textContent =
-        "¡Gracias! Tu comentario se publicó en este navegador.";
-        mostrarComentarios();
+            "No se pudo publicar la opinión. Revisa la conexión con Firebase.";
+        }
     });
 
-    // Modo administrador de demostración.
-
-    let modoAdministrador = false;
-
-    document.addEventListener("keydown", (evento) => {
-    // Ctrl + Shift + A permite activar el modo administrador.
+    // 5. Acceso administrativo mediante Ctrl + Shift + A.
+    // No hay una clave fija escrita en el código.
+    document.addEventListener("keydown", async (evento) => {
     if (evento.ctrlKey && evento.shiftKey && evento.key.toLowerCase() === "a") {
-        const clave = prompt("Introduce la clave de administrador:");
+        evento.preventDefault();
 
-        // Clave
-        if (clave === "237890sumaqwasi") {
-        modoAdministrador = !modoAdministrador;
-        alert(
-            modoAdministrador
-            ? "Modo administrador activado."
-            : "Modo administrador desactivado.",
-        );
-        mostrarComentarios();
-        } else {
-        alert("Clave incorrecta.");
+        // Si el administrador ya inició sesión, el atajo cierra sesión.
+        if (auth.currentUser?.uid === UID_ADMIN) {
+        await signOut(auth);
+        return;
+        }
+
+        const email = window.prompt("Correo de administrador:");
+
+        if (!email) return;
+
+        const password = window.prompt("Contraseña de administrador:");
+
+        if (!password) return;
+
+        try {
+        await signInWithEmailAndPassword(auth, email.trim(), password);
+        } catch (error) {
+        console.error("Error de inicio de sesión:", error);
+        alert("No se pudo iniciar sesión. Revisa el correo y la contraseña.");
         }
     }
     });
 
-    mostrarComentarios();
+    // 6. Activar la opción de eliminar solo para el UID autorizado.
+    onAuthStateChanged(auth, (usuario) => {
+    modoAdministrador = usuario?.uid === UID_ADMIN;
+
+    // Volver a dibujar los comentarios para mostrar/ocultar los botones.
+    // La siguiente actualización de Firestore también los renderizará.
+    const lista = document.getElementById("lista-comentarios");
+
+    if (lista) {
+        lista.querySelectorAll("[data-eliminar]").forEach((boton) => {
+        boton.hidden = !modoAdministrador;
+        });
+    }
+
+    if (modoAdministrador) {
+        console.info("Sesión de administrador iniciada.");
+    } else {
+        console.info("Sesión de administrador cerrada.");
+    }
+    });
