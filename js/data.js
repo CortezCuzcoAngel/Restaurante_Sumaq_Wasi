@@ -8,7 +8,7 @@ const PLATOS = [
     categoria: "Desayunos",
     nombre: "Chicharrón con Mote + Café",
     precio: "S/ 20",
-    imagen: "images/chicharron-mote-cafe.jpg",
+    imagen: "images/Sabor_de_casa/chicharron-mote-cafe.jpg",
     resumen:
       "Crujiente chicharrón de cerdo acompañado de mote y café cajamarquino.",
     descripcion:
@@ -42,7 +42,7 @@ const PLATOS = [
     categoria: "Desayunos",
     nombre: "Trucha Frita con Yuca + Café",
     precio: "S/ 18",
-    imagen: "images/trucha-frita-yuca-cafe.jpg",
+    imagen: "images/Sabor_de_casa/trucha-frita-yuca-cafe.jpg",
     resumen:
       "Trucha frita acompañada de yuca sancochada y una taza de café cajamarquino.",
     descripcion:
@@ -78,7 +78,7 @@ const PLATOS = [
     categoria: "Desayunos",
     nombre: "Tilapia Frita con Yuca + Café",
     precio: "S/ 20.00",
-    imagen: "images/tilapia-frita.jpg",
+    imagen: "images/Sabor_de_casa/tilapia-frita.jpg",
     resumen: "Tilapia frita acompañada de yuca y café pasado.",
     descripcion: "Tilapia frita servida con yuca y una taza de café pasado.",
     caracteristicas: [
@@ -1592,7 +1592,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Ceviche de Tollo",
     precio: "S/ 28",
-    imagen: "images/ceviche-tollo.jpg",
+    imagen: "images/Ceviches_bar/ceviche-tollo.jpg",
     resumen:
       "Tradicional ceviche preparado con tollo fresco, marinado en limón y acompañado de camote, choclo y cancha.",
     descripcion:
@@ -1629,7 +1629,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Ceviche de Trucha",
     precio: "S/ 26",
-    imagen: "images/ceviche-trucha.jpg",
+    imagen: "images/Ceviches_bar/ceviche-trucha.jpg",
     resumen: "Trucha fresca marinada en limón con cebolla, culantro y ají.",
     descripcion:
       "Exquisito ceviche preparado con trucha fresca de piscigranja, marinada en limón y condimentada con ingredientes frescos que resaltan su sabor natural.",
@@ -1665,7 +1665,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Leche de Tigre",
     precio: "S/ 16",
-    imagen: "images/leche-tigre.jpg",
+    imagen: "images/Ceviches_bar/leche-tigre.jpg",
     resumen: "Concentrado del ceviche servido con pescado, mariscos y choclo.",
     descripcion:
       "Refrescante leche de tigre preparada con jugo de limón, pescado fresco, ají, culantro y el tradicional caldo del ceviche. Reconocida por su intenso sabor y como uno de los aperitivos más populares del Perú.",
@@ -1698,7 +1698,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Leche de Pantera",
     precio: "S/ 20",
-    imagen: "images/leche-pantera.jpg",
+    imagen: "images/Ceviches_bar/leche-pantera.jpg",
     resumen:
       "Refrescante preparación marina a base de leche de tigre y mariscos.",
     descripcion:
@@ -1733,7 +1733,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Frito con Ceviche de Tollo + Chicharrón de Chancho",
     precio: "S/ 28",
-    imagen: "images/frito-ceviche-tollo-chicharron.jpg",
+    imagen: "images/Ceviches_bar/frito-ceviche-tollo-chicharron.jpg",
     resumen:
       "Fritura de pescado acompañada de ceviche de tollo y chicharrón de chancho.",
     descripcion:
@@ -1770,7 +1770,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Ceviche Mixto",
     precio: "S/ 35",
-    imagen: "images/ceviche-mixto.jpg",
+    imagen: "images/Ceviches_bar/ceviche-mixto.jpg",
     resumen:
       "Ceviche de pescado acompañado de una selección de mariscos frescos.",
     descripcion:
@@ -1804,10 +1804,10 @@ const PLATOS = [
 
   {
     id: "ceviche-conchas-negras",
-    categoria: "Cecivhes",
+    categoria: "Ceviches",
     nombre: "Ceviche de Conchas Negras",
     precio: "S/ 35",
-    imagen: "images/ceviche-conchas-negras.jpg",
+    imagen: "images/Ceviches_bar/ceviche-conchas-negras.jpg",
     resumen: "Ceviche de conchas negras con limón, cebolla y ají.",
     descripcion:
       "Tradicional ceviche preparado con conchas negras frescas, limón, cebolla roja, ají limo y culantro. Su sabor intenso y característico lo convierte en una especialidad para los amantes de los productos marinos.",
@@ -1841,7 +1841,7 @@ const PLATOS = [
     categoria: "Ceviches",
     nombre: "Ceviche Carretillero",
     precio: "S/ 30",
-    imagen: "images/ceviche-carretillero.jpg",
+    imagen: "images/Ceviches_bar/ceviche-carretillero.jpg",
     resumen:
       "Ceviche de tollo acompañado de chicharrón de pota y crema especial.",
     descripcion:
@@ -1882,7 +1882,7 @@ const PLATOS = [
     categoria: "Chicharron",
     nombre: "Chicharrón de Pota",
     precio: "S/ 30",
-    imagen: "images/chicharron-pota.jpg",
+    imagen: "images/Ceviches_bar/chicharron-pota.jpg",
     resumen:
       "Crocantes trozos de pota acompañados de guarnición y salsa criolla.",
     descripcion:
@@ -1917,7 +1917,7 @@ const PLATOS = [
     categoria: "Chicharron",
     nombre: "Chicharrón de Trucha",
     precio: "S/ 32",
-    imagen: "images/chicharron-trucha.jpg",
+    imagen: "images/Ceviches_bar/chicharron-trucha.jpg",
     resumen:
       "Crocantes trozos de trucha acompañados de salsa criolla y guarnición.",
     descripcion:
@@ -1952,7 +1952,7 @@ const PLATOS = [
     categoria: "Chicharron",
     nombre: "Chicharrón de Langostinos",
     precio: "S/ 35",
-    imagen: "images/chicharron-langostinos.jpg",
+    imagen: "images/Ceviches_bar/chicharron-langostinos.jpg",
     resumen: "Langostinos crocantes acompañados de salsa criolla y guarnición.",
     descripcion:
       "Langostinos frescos sazonados y fritos hasta lograr una cobertura dorada y crocante, acompañados de salsa criolla y guarnición.",
@@ -1987,7 +1987,7 @@ const PLATOS = [
     categoria: "Chicharron",
     nombre: "Chicharrón de Tollo",
     precio: "S/ 35",
-    imagen: "images/chicharron-tollo.jpg",
+    imagen: "images/Ceviches_bar/chicharron-tollo.jpg",
     resumen:
       "Crocantes trozos de tollo acompañados de salsa criolla y guarnición.",
     descripcion:
@@ -2026,7 +2026,7 @@ const PLATOS = [
     categoria: "Mariscos",
     nombre: "Arroz con Mariscos",
     precio: "S/ 35",
-    imagen: "images/arroz-mariscos.jpg",
+    imagen: "images/Ceviches_bar/arroz-mariscos.jpg",
     resumen:
       "Arroz sazonado preparado con una deliciosa combinación de mariscos.",
     descripcion:
@@ -2066,7 +2066,7 @@ const PLATOS = [
     categoria: "Mariscos",
     nombre: "Chaufa con Mariscos",
     precio: "S/ 35",
-    imagen: "images/chaufa-mariscos.jpg",
+    imagen: "images/Ceviches_bar/chaufa-mariscos.jpg",
     resumen: "Arroz chaufa salteado al wok con una variedad de mariscos.",
     descripcion:
       "Delicioso arroz chaufa preparado al wok con mariscos frescos, huevo, cebolla china y sillao, combinando la cocina marina con el tradicional estilo chifa peruano.",
@@ -2107,7 +2107,7 @@ const PLATOS = [
     categoria: "Jalea",
     nombre: "Jalea Simple",
     precio: "S/ 30",
-    imagen: "images/jalea-simple.jpg",
+    imagen: "images/Ceviches_bar/jalea-simple.jpg",
     resumen: "Crocante pescado frito acompañado de salsa criolla y guarnición.",
     descripcion:
       "Tradicional jalea peruana preparada con pescado fresco sazonado, empanizado y frito hasta quedar crocante. Se acompaña con salsa criolla y guarnición.",
@@ -2142,7 +2142,7 @@ const PLATOS = [
     categoria: "Jalea",
     nombre: "Jalea Mixta",
     precio: "S/ 35",
-    imagen: "images/jalea-mixta.jpg",
+    imagen: "images/Ceviches_bar/jalea-mixta.jpg",
     resumen: "Crocante combinación de pescado y mariscos fritos.",
     descripcion:
       "Abundante jalea preparada con pescado fresco y una selección de mariscos, fritos hasta obtener una textura crocante y acompañados de salsa criolla y guarnición.",
@@ -2184,7 +2184,7 @@ const PLATOS = [
     categoria: "Parihuelas",
     nombre: "Parihuela de Tramboyo",
     precio: "S/ 32",
-    imagen: "images/parihuela-tramboyo.jpg",
+    imagen: "images/Ceviches_bar/parihuela-tramboyo.jpg",
     resumen:
       "Tradicional sopa marina preparada con tramboyo y un concentrado de pescado.",
     descripcion:
@@ -2222,7 +2222,7 @@ const PLATOS = [
     categoria: "Parihuelas",
     nombre: "Parihuela de Cabrilla",
     precio: "S/ 32",
-    imagen: "images/parihuela-cabrilla.jpg",
+    imagen: "images/Ceviches_bar/parihuela-cabrilla.jpg",
     resumen: "Caldo marino preparado con cabrilla y un concentrado de pescado.",
     descripcion:
       "Sabrosa parihuela elaborada con cabrilla fresca y un caldo concentrado de pescado, acompañado de un aderezo tradicional y hierbas aromáticas.",
@@ -2258,7 +2258,7 @@ const PLATOS = [
     categoria: "Parihuelas",
     nombre: "Parihuela de Trucha",
     precio: "S/ 28",
-    imagen: "images/parihuela-trucha.jpg",
+    imagen: "images/Ceviches_bar/parihuela-trucha.jpg",
     resumen:
       "Caldo caliente preparado con trucha fresca y un aderezo especial.",
     descripcion:
@@ -2295,7 +2295,7 @@ const PLATOS = [
     categoria: "Parihuelas",
     nombre: "Parihuela de Tollo",
     precio: "S/ 30",
-    imagen: "images/parihuela-tollo.jpg",
+    imagen: "images/Ceviches_bar/parihuela-tollo.jpg",
     resumen: "Tradicional caldo marino preparado con tollo y aderezo especial.",
     descripcion:
       "Caliente y sabrosa parihuela preparada con tollo fresco, caldo de pescado y un aderezo tradicional de la cocina marina peruana.",
@@ -2669,115 +2669,127 @@ const PLATOS = [
   // Tragos
   // =====================
   {
-    id: "pisco-sour-copa",
+    id: "mojito",
     categoria: "Tragos",
-    nombre: "Pisco Sour Copa",
-    precio: "S/ 15.00",
-    imagen: "images/pisco-sour-copa.jpg",
-    resumen: "Cóctel clásico peruano a base de pisco.",
+    nombre: "Mojito",
+    precio: "S/ 18",
+    imagen: "images/Ceviches_bar/mojito.jpg",
+    resumen: "Cóctel refrescante de ron, limón, hierbabuena y soda.",
     descripcion:
-      "Pisco Sour preparado con pisco, limón, jarabe de goma y clara de huevo, con un toque de amargo de angostura.",
-    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
-    ingredientes: [
-      "Pisco",
-      "Jugo de limón",
-      "Jarabe de goma",
-      "Clara de huevo",
-      "Amargo de angostura",
+      "Clásico cóctel preparado con ron blanco, limón, azúcar y hierbabuena fresca, completado con soda y hielo. Una bebida aromática y refrescante.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 cóctel" },
+      { etiqueta: "Precio", valor: "S/ 18" },
+      { etiqueta: "Medida de ron", valor: "60 ml (2 oz)" },
+      { etiqueta: "Tipo", valor: "Cóctel refrescante" },
     ],
-    preparacion: [
-      "Agregar el pisco, el jugo de limón, el jarabe de goma y la clara de huevo a una coctelera.",
-      "Batir con hielo hasta enfriar y lograr una mezcla espumosa.",
-      "Servir en una copa y añadir unas gotas de amargo de angostura.",
-    ],
-  },
-  {
-    id: "pisco-sour-maracuya",
-    categoria: "Tragos",
-    nombre: "Pisco Sour Maracuyá",
-    precio: "S/ 15.00",
-    imagen: "images/pisco-sour-maracuya.jpg",
-    resumen: "Pisco Sour con el sabor tropical del maracuyá.",
-    descripcion:
-      "Cóctel de pisco con maracuyá, limón y jarabe de goma, de sabor frutal y ligeramente ácido.",
-    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
     ingredientes: [
-      "Pisco",
-      "Pulpa o jugo de maracuyá",
-      "Jugo de limón",
-      "Jarabe de goma",
-      "Clara de huevo (opcional)",
+      "60 ml de ron blanco (2 oz)",
+      "15 ml de jugo de limón (1/2 oz)",
+      "2 cucharadas de azúcar blanca",
+      "8 hojas de hierbabuena",
+      "90 ml de soda o agua con gas",
       "Hielo",
     ],
     preparacion: [
-      "Colocar el pisco, el maracuyá, el limón y el jarabe de goma en una coctelera.",
-      "Agregar hielo y batir hasta que esté bien frío.",
-      "Si se usa clara, batir hasta obtener espuma.",
-      "Servir en una copa.",
+      "Colocar la hierbabuena, el azúcar y el limón en un vaso.",
+      "Machacar suavemente para liberar el aroma de la hierbabuena.",
+      "Añadir el ron blanco y el hielo.",
+      "Completar con soda o agua con gas.",
+      "Remover suavemente y decorar con hierbabuena.",
     ],
   },
   {
-    id: "pina-colada",
+    id: "chilcanos",
     categoria: "Tragos",
-    nombre: "Piña Colada",
-    precio: "S/ 15.00",
-    imagen: "images/pina-colada.jpg",
-    resumen: "Cóctel cremoso de piña y coco.",
-    descripcion: "Bebida tropical preparada con ron, piña y crema de coco.",
-    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
-    ingredientes: ["Ron", "Jugo de piña", "Crema de coco", "Hielo"],
+    nombre: "Chilcanos",
+    precio: "S/ 25",
+    imagen: "images/Ceviches_bar/chilcanos.jpg",
+    resumen: "Chilcano de pisco disponible en sabores fresa, mango y maracuyá.",
+    descripcion:
+      "Cóctel preparado con pisco, limón, jarabe de goma y Ginger Ale. Puedes elegirlo en sus variedades de fresa, mango o maracuyá.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 cóctel" },
+      { etiqueta: "Sabores", valor: "Fresa, mango y maracuyá" },
+      { etiqueta: "Base", valor: "60 ml de pisco (2 oz)" },
+      { etiqueta: "Precio", valor: "Por confirmar" },
+    ],
+    ingredientes: [
+      "Base: 60 ml de pisco (2 oz)",
+      "15 ml de jugo de limón",
+      "15 ml de jarabe de goma",
+      "Hielo",
+      "Ginger Ale para completar",
+      "Fresa: 3 fresas machacadas",
+      "Mango: 60 ml de pulpa de mango",
+      "Maracuyá: 60 ml de pulpa de maracuyá con pepa",
+    ],
     preparacion: [
-      "Colocar el ron, el jugo de piña, la crema de coco y el hielo en una licuadora.",
+      "Machacar la fruta elegida en el vaso.",
+      "Añadir pisco, limón y jarabe de goma.",
+      "Agregar hielo.",
+      "Completar con Ginger Ale.",
+      "Remover suavemente y decorar con fruta y sombrillita.",
+    ],
+  },
+  {
+    id: "cuba-libre",
+    categoria: "Tragos",
+    nombre: "Cuba Libre",
+    precio: "S/ 18",
+    imagen: "images/Ceviches_bar/cuba-libre.jpg",
+    resumen: "Cóctel de ron, Coca Cola y un toque de limón.",
+    descripcion:
+      "Cóctel clásico que combina ron rubio, Coca Cola y jugo de limón, servido con hielo y una rodaja de limón.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 cóctel" },
+      { etiqueta: "Precio", valor: "S/ 18" },
+      { etiqueta: "Medida de ron", valor: "60 ml (2 oz)" },
+      { etiqueta: "Tipo", valor: "Cóctel clásico" },
+    ],
+    ingredientes: [
+      "60 ml de ron rubio (2 oz)",
+      "15 ml de jugo de limón",
+      "150 ml de Coca Cola",
+      "Hielo",
+      "Rodaja de limón para decorar",
+    ],
+    preparacion: [
+      "Llenar un vaso largo con hielo.",
+      "Añadir el ron rubio y el jugo de limón.",
+      "Completar con Coca Cola.",
+      "Remover suavemente y decorar con una rodaja de limón.",
+    ],
+  },
+  {
+    id: "algarrobina",
+    categoria: "Tragos",
+    nombre: "Algarrobina",
+    precio: "S/ 20",
+    imagen: "images/Ceviches_bar/algarrobina.jpg",
+    resumen: "Cóctel cremoso de pisco, algarrobina y leche evaporada.",
+    descripcion:
+      "Cóctel dulce y cremoso preparado con pisco, algarrobina, leche evaporada, jarabe de goma y yema de huevo, espolvoreado con canela.",
+    caracteristicas: [
+      { etiqueta: "Porción", valor: "1 cóctel" },
+      { etiqueta: "Precio", valor: "S/ 20" },
+      { etiqueta: "Medida de pisco", valor: "60 ml (2 oz)" },
+      { etiqueta: "Tipo", valor: "Cóctel cremoso" },
+    ],
+    ingredientes: [
+      "60 ml de pisco (2 oz)",
+      "45 ml de algarrobina (1.5 oz)",
+      "60 ml de leche evaporada",
+      "15 ml de jarabe de goma",
+      "1 yema de huevo",
+      "Hielo",
+      "Canela molida",
+    ],
+    preparacion: [
+      "Colocar el pisco, la algarrobina, la leche evaporada, el jarabe de goma, la yema y el hielo en la licuadora.",
       "Licuar hasta obtener una mezcla cremosa.",
-      "Servir en una copa.",
-    ],
-  },
-  {
-    id: "sangria-1-litro",
-    categoria: "Tragos",
-    nombre: "Sangría 1 L",
-    precio: "S/ 30.00",
-    imagen: "images/sangria.jpg",
-    resumen: "Sangría frutal para compartir.",
-    descripcion:
-      "Bebida preparada con vino y frutas, de sabor fresco y frutal.",
-    caracteristicas: [{ etiqueta: "Presentación", valor: "1 litro" }],
-    ingredientes: [
-      "Vino tinto",
-      "Frutas picadas, como manzana y naranja",
-      "Jugo de naranja",
-      "Gaseosa o agua con gas (opcional)",
-      "Hielo",
-    ],
-    preparacion: [
-      "Colocar el vino y las frutas picadas en una jarra.",
-      "Añadir el jugo de naranja y, si se desea, gaseosa o agua con gas.",
-      "Mezclar y refrigerar para integrar los sabores.",
-      "Servir con hielo.",
-    ],
-  },
-  {
-    id: "machu-picchu",
-    categoria: "Tragos",
-    nombre: "Machu Picchu",
-    precio: "S/ 22.00",
-    imagen: "images/machu-picchu.jpg",
-    resumen: "Cóctel colorido con capas de distintos sabores.",
-    descripcion:
-      "Cóctel preparado con pisco, menta, granadina y jugo de naranja, conocido por sus colores en capas.",
-    caracteristicas: [{ etiqueta: "Presentación", valor: "Copa" }],
-    ingredientes: [
-      "Pisco",
-      "Crema de menta verde",
-      "Granadina",
-      "Jugo de naranja",
-      "Hielo",
-    ],
-    preparacion: [
-      "Llenar una copa alta con hielo.",
-      "Agregar el pisco y el jugo de naranja.",
-      "Incorporar lentamente la crema de menta.",
-      "Añadir la granadina al final para formar el efecto de colores en capas.",
+      "Servir en un vaso corto.",
+      "Espolvorear canela molida.",
     ],
   },
   // =====================
