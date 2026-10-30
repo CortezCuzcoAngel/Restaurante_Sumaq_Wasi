@@ -952,7 +952,7 @@ const PLATOS = [
     precio: "S/ 22",
     imagen: "images/cuarto-cuy-frito.jpg",
     resumen:
-      "Un cuarto de cuy frito acompañado de papa dorada, mote y ensalada.",
+      "Un cuarto de cuy frito acompañado de papa picante, mote y ensalada.",
     descripcion:
       "Porción de un cuarto de cuy cajamarquino, marinado con especias tradicionales y frito hasta obtener una piel dorada y crocante. Se acompaña con papas doradas, mote y ensalada fresca.",
     caracteristicas: [
