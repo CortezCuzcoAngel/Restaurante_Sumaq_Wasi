@@ -61,7 +61,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
   </section>
 
-  <!-- ===================== NOSOTROS ===================== -->
   <section class="nosotros" id="nosotros">
     <div class="container nosotros-grid">
       <div class="nosotros-foto">
@@ -96,7 +95,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
   </section>
 
-  <!-- ===================== PLATOS DESTACADOS ===================== -->
   <section id="destacados">
     <div class="container">
       <div class="section-titulo">
@@ -113,7 +111,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
   </section>
 
-  <!-- ===================== GALERÍA ===================== -->
   <section id="galeria">
     <div class="container">
       <div class="section-titulo">
@@ -152,7 +149,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
   </section>
 
-  <!-- ===================== UBICACIÓN / CONTACTO ===================== -->
 <section class="ubicacion" id="ubicacion">
   <div class="container ubicacion-grid">
 
@@ -208,7 +204,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   </div>
 </section>
 
-  <!-- ===================== CTA FINAL ===================== -->
   <section class="cta-final">
     <div class="container">
       <h2>¿Listo para probar Cajamarca en un plato?</h2>
@@ -256,7 +251,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   </div>
 </footer>
 
-<!-- Botones flotantes de redes sociales -->
 <div class="redes-flotantes">
   <a href="#" class="red-flotante red-whatsapp"
       data-whatsapp="Hola Sumaq Wasi, quisiera hacer una reserva 🍽️"
@@ -278,7 +272,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script>
-  // Muestra 3 platos destacados en la página principal
   document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("destacados-grid");
     const destacadosIds = ["chicharron-cajamarquino", "cuarto-cuy-frito","cabrito"];
@@ -304,7 +297,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       `);
     });
 
-    // Revisa fotos generadas dinámicamente
     document.querySelectorAll(".photo-frame img[data-nombre-archivo]").forEach((img) => {
       img.addEventListener("error", () => {
         img.classList.add("img-missing");
