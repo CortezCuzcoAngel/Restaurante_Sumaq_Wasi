@@ -949,7 +949,7 @@ const PLATOS = [
     id: "cuarto-cuy-frito",
     categoria: "Platos_Tipicos",
     nombre: "1/4 Cuy Frito",
-    precio: "S/ 22",
+    precio: "S/ 25",
     imagen: "images/cuarto-cuy-frito.jpg",
     resumen:
       "Un cuarto de cuy frito acompañado de papa picante, mote y ensalada.",
